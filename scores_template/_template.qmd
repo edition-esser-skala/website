@@ -1,0 +1,34 @@
+---
+composer_data:
+  name:
+    last:
+    first:
+    suffix:
+  born:
+    date:
+    location:
+  died:
+    date:
+    location:
+  encyclopedia:
+    mgg:
+    grove:
+    wikipedia_de:
+    wikipedia_en:
+    wikipedia_cs:
+    oeml:
+    oebl:
+    db:
+  authority:
+    gnd:
+    viaf:
+  archive:
+    imslp:
+    cpdl:
+  literature:
+    - first
+    - second
+  cv:
+  intro:
+  hero:
+---
