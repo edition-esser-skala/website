@@ -1,10 +1,10 @@
 project:
   type: website
-  render:
-    - index.qmd
-    - scores/eybler.qmd
-    - scores/adlgasser.qmd
-    - contact.qmd
+  # render:
+  #   - index.qmd
+  #   - scores/eybler.qmd
+  #   - scores/adlgasser.qmd
+  #   - contact.qmd
 
 website:
   title: "Edition Esser-Skala"
