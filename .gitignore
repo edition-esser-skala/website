@@ -8,3 +8,5 @@ data_generated
 scores
 script/__pycache__
 script/pat.py
+editorial-guidelines.qmd
+technical-documentation.qmd
