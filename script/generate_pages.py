@@ -189,7 +189,7 @@ def generate_score_pages(works: dict) -> None:
 
         # save composer page
         page["title"] = format_page_title(page["composer_data"]["name"])
-        page["toc"] = False
+        # page["toc"] = False
         page.content = PAGE_TEMPLATE.format(
             composer_details=composer_details,
             intro=page["composer_data"].get("intro", ""),

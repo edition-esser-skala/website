@@ -1,49 +1,111 @@
 project:
   type: website
+  render:
+    - index.qmd
+    - scores/eybler.qmd
+    - scores/adlgasser.qmd
+    - contact.qmd
 
 website:
   title: "Edition Esser-Skala"
   navbar:
-    search: true
     left:
-    - text: "Home"
+    - text: Home
       href: index.qmd
-    - news.qmd
-    - text: "Scores"
-      href: scores.qmd
-    - contact.qmd
+    - text: News
+      href: news.qmd
+    - text: Scores
+      href: scores/eybler.qmd
+    - text: Contact
+      href: contact.qmd
   sidebar:
-    - title: "Home"
+    - title: Home
+      search: true
       contents:
       - index.qmd
       - editorial-guidelines.qmd
       - technical-documentation.qmd
-    - title: "Scores"
+    - title: Scores
       contents:
-        - scores.qmd
-        - section: "Core projects"
+        - section: Core projects
           contents:
             - scores/eybler.qmd
             - scores/haydn.qmd
             - scores/tuma.qmd
             - scores/werner.qmd
-        - section: "A"
+        - section: A
           contents:
+            - scores/adlgasser.qmd
             - scores/albrechtsberger.qmd
-        - section: "C"
+            - scores/aumann.qmd
+        - section: B
+          contents:
+            - scores/bachschmid.qmd
+            - scores/boog.qmd
+            - scores/brixi.qmd
+        - section: C
           contents:
             - scores/caldara.qmd
-        - section: "G"
+        - section: D
+          contents:
+            - scores/danzi.qmd
+        - section: E
+          contents:
+            - scores/eberlin.qmd
+            - scores/ehrenhardt.qmd
+        - section: F
+          contents:
+            - scores/fuchs.qmd
+        - section: G
           contents:
             - scores/galuppi.qmd
+            - scores/gassmann.qmd
             - scores/gugl.qmd
-        - section: "K"
+        - section: H
+          contents:
+            - scores/harrer.qmd
+            - scores/hasse.qmd
+            - scores/heidenreich.qmd
+            - scores/hoffmann.qmd
+            - scores/hofmann.qmd
+            - scores/homilius.qmd
+        - section: K
           contents:
             - scores/kobrich.qmd
+            - scores/koenigsperger.qmd
+            - scores/kolberer.qmd
             - scores/kunzen.qmd
-        - section: "S"
+        - section: N
           contents:
+            - scores/novotny.qmd
+        - section: P
+          contents:
+            - scores/pisani.qmd
+            - scores/poppe.qmd
+        - section: R
+          contents:
+            - scores/raab.qmd
+            - scores/reindl.qmd
+            - scores/reinhardt.qmd
+            - scores/reutter-der-aeltere.qmd
+            - scores/reutter-der-juengere.qmd
+            - scores/rolle-cf.qmd
+            - scores/rolle-jh.qmd
+        - section: S
+          contents:
+            - scores/scheibe.qmd
+            - scores/scheibl.qmd
+            - scores/sengmillner.qmd
             - scores/stoelzel.qmd
+        - section: W
+          contents:
+            - scores/weiss.qmd
+            - scores/wolf.qmd
+        - section: Z
+          contents:
+            - scores/zacher.qmd
+            - scores/zechner.qmd
+            - scores/zelenka.qmd
 format:
   html:
     theme:
@@ -51,3 +113,5 @@ format:
       - brand
       - styling.scss
     toc: true
+    grid:
+      sidebar-width: 350px

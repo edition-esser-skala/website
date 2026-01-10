@@ -293,7 +293,7 @@ def format_work_entry(work: dict) -> tuple[str, str]:
     # title
     title = (
         '### {title}<br/>[{subtitle}]{{.work-subtitle}}'
-        ' {{#work-{id_slug}}}\n'
+        ' {{#work-{id_slug} .unlisted}}\n'
     )
     res = [title.format(**work), "|||\n|-|-|"]
 
