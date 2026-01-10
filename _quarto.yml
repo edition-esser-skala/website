@@ -22,7 +22,8 @@ website:
     - title: Home
       search: true
       contents:
-      - index.qmd
+      - text: Home
+        href: index.qmd
       - editorial-guidelines.qmd
       - technical-documentation.qmd
     - title: Scores

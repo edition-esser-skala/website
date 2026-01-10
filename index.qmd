@@ -1,5 +1,5 @@
 ---
-title: About
+title: Welcome!
 ---
 
 The Edition Esser-Skala publishes [Open Content](https://opendefinition.org/od) editions of (mainly) 18th century sacral music. All scores may be freely downloaded in PDF format. Moreover, selected titles are available in print from Kindle Direct Publishing (at cost price).
@@ -22,7 +22,7 @@ František Ignác Antonín Tůma
 Gregor Joseph Werner
 : We offer editions of Werner’s [sacred music](scores/werner.qmd). Concurrently, we are working on a [catalogue](https://gregor-joseph-werner.at) of his works.
 
-![Core projects](images/core_projects.png)
+![](images/core_projects.png){alt-text="Core projects (Eybler, Haydn, Tůma, Werner)"}
 
 But don't miss out our other editions, which include several highlights, such as
 
