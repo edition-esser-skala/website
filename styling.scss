@@ -1,0 +1,81 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+.nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ccc;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-brand:hover {
+  color: #ccc;
+}
+
+table.work-table, table.composer-table {
+  border: 0;
+  font-size: 1em;
+}
+
+table.work-table td, table.composer-table td {
+  border: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+table.work-table th {
+  padding: .5rem 0 .25rem 0;
+}
+
+table.work-table a, table.composer-table a {
+  text-decoration: none;
+}
+
+.asset-link {
+  margin-right: .4em;
+}
+
+.work-subtitle {
+  font-weight: 400;
+}
+
+.composer-details {
+  margin: 1em 0 2em 0 !important;
+  padding: 1em;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+// overview table on project page
+table.overview-table {
+  font-size: .85em;
+}
+
+table.overview-table thead {
+  background-color: white;
+  border: 0;
+}
+
+table.overview-table th {
+  border: 0;
+  padding: 0em 1em 0em 0.5em;
+}
+
+table.overview-table td {
+  border: 0;
+  padding: 0em 1em 0em 0.5em;
+}
+
+table.overview-table a {
+  text-decoration: none;
+}

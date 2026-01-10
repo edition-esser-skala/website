@@ -1,0 +1,16 @@
+---
+title: "Contact"
+---
+
+Edition Esser-Skala e.U.<br/>
+Wolfgangseestraße 31g<br/>
+5023 Koppl<br/>
+Austria<br/>
+[edition@esser-skala.at](mailto:edition@esser-skala.at)
+
+
+## Disclosure (§25 Mediengesetz)
+
+TBD
+
+Typeset with [Source Sans Pro](https://github.com/adobe-fonts/source-sans/) (main text) and [Fira Code](https://github.com/tonsky/FiraCode) (source code).

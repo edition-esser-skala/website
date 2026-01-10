@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/.quarto/
+_site
+scores
+script/__pycache__
+script/pat.py

@@ -1,0 +1,52 @@
+project:
+  type: website
+
+website:
+  title: "Edition Esser-Skala"
+  navbar:
+    search: true
+    left:
+    - text: "Home"
+      href: index.qmd
+    - news.qmd
+    - text: "Scores"
+      href: scores.qmd
+    - contact.qmd
+  sidebar:
+    - title: "Home"
+      contents:
+      - index.qmd
+      - editorial-guidelines.qmd
+      - technical-documentation.qmd
+    - title: "Scores"
+      contents:
+        - scores.qmd
+        - section: "Core projects"
+          contents:
+            - scores/eybler.qmd
+            - scores/haydn.qmd
+            - scores/tuma.qmd
+            - scores/werner.qmd
+        - section: "A"
+          contents:
+            - scores/albrechtsberger.qmd
+        - section: "C"
+          contents:
+            - scores/caldara.qmd
+        - section: "K"
+          contents:
+            - scores/kobrich.qmd
+            - scores/kunzen.qmd
+        - section: "S"
+          contents:
+            - scores/stoelzel.qmd
+format:
+  html:
+    theme:
+      - flatly
+      - brand
+      - styling.scss
+    toc: true
+
+
+

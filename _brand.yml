@@ -1,0 +1,36 @@
+meta:
+  name:
+    full: Edition Esser-Skala e.U.
+    short: EES
+  link:
+    home: https://edition.esser-skala.at
+    github: https://github.com/edition-esser-skala
+  description: Open Content music publishing
+  founded: 2016
+
+logo:
+  small: images/logo_small.png
+  medium: images/logo_medium.png
+
+color:
+  palette:
+    white: "#FFFFFF"
+    black: "#151515"
+    red: rgb(212, 0, 0)
+  primary: black
+
+typography:
+  fonts:
+    - family: Source Sans Pro
+      source: bunny
+      weight: [400, 700]
+      style: [normal, italic]
+    - family: Fira Code
+      source: bunny
+      weight: [400, 700]
+  base: 
+    family: Source Sans Pro
+    size: 1.1rem
+  monospace: Fira Code
+  link:
+    color: red

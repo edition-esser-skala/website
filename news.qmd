@@ -1,0 +1,11 @@
+---
+title: "News"
+listing:
+  contents: news
+  categories: true
+  sort: "date desc"
+  type: default
+  filter-ui: true
+  date-format: "D MMMM YYYY"
+---
+
