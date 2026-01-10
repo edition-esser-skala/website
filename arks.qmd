@@ -1,0 +1,29 @@
+---
+title: ARKs
+---
+
+## Overview
+
+A semi-opaque Archival Resource Key ([ARK](https://arks.org)) is assigned to each edition as persistent identifier:
+
+- Each ARK uses the Name Assigning Authority Number ([NAAN](https://arks.org/about/ark-naans-and-systems/)) `68748` …
+- … and the [Shoulder](https://arks.org/about/ark-features/) `e1`.
+- The [Blade](https://arks.org/specs/) consists of a composer acronym and work identifier.
+
+  |Composer|Acronym|Work ID|
+  |-|-|-|
+  |Eybler|jle|HerEy number|
+  |Haydn|jmh|MH number|
+  |Tůma|fit|TumW number|
+  |Werner|gjw|WerW number|
+  |Zelenka|jdz|ZWV number|
+
+- The Base Name resolves to the full score; parts are denoted by Part Qualifiers, i.e., a slash followed by the part abbreviation.
+
+ARKs are resolved by `https://ark.esser-skala.at` via a [minimal ARK resolver](https://github.com/edition-esser-skala/minimal-ark-resolver). (They are also forwarded to the resolver from this site's base URL via its `.htaccess` file.)
+
+## Examples
+
+- [ark:68748/e1gjwb1](https://n2t.net/ark:68748/e1gjwb1): full score of Werner's *Missa Trinitas in Unitate veneranda* WerW B.1
+- [ark:68748/e1jle40/vl1](https://n2t.net/ark:68748/e1jle40/vl1): violin 1 part of Eybler's *Omnes de Saba venient* HerEy 40
+- [ark:68748/e1fitf2/coro](https://n2t.net/ark:68748/e1fitf2/coro): vocal score of Tůma's *Stabat mater* TumW F.2
