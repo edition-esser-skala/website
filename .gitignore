@@ -4,6 +4,7 @@
 .Ruserdata
 /.quarto/
 _site
+data_generated
 scores
 script/__pycache__
 script/pat.py

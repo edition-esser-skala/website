@@ -60,7 +60,8 @@ SLUG_REPLACE = {
     "ý": "y"
 }
 
-FULL_SCORE_ASSET_NAME = "**full&nbsp;score**"
+ASSET_FULL_SCORE = "**full&nbsp;score**"
+ASSET_MIDI = "midi_collection.zip"
 
 TABLEROW_TEMPLATE = "|[{id}](#work-{id_slug})|{title}|{genre}|"
 
@@ -84,24 +85,24 @@ INTRO_TEMPLATE = """\
 
 # pylint: disable=line-too-long
 ENCYCLOPEDIAS = {
-    "mgg": "[[MGG](https://www.mgg-online.com/mgg/stable/{})]{{.asset-link}}",
-    "grove": "[[Grove](https://doi.org/{})]{{.asset-link}}",
-    "wikipedia_de": '[[{{{{< fa brands wikipedia-w >}}}} (de)](https://de.wikipedia.org/wiki/{})]{{.asset-link}}',
-    "wikipedia_cs": '[[{{{{< fa brands wikipedia-w >}}}} (cs)](https://cs.wikipedia.org/wiki/{})]{{.asset-link}}',
-    "wikipedia_en": '[[{{{{< fa brands wikipedia-w >}}}} (en)](https://en.wikipedia.org/wiki/{})]{{.asset-link}}',
-    "oeml": "[[ÖML](https://doi.org/{})]{{.asset-link}}",
-    "oebl": "[[ÖBL](https://doi.org/{})]{{.asset-link}}",
-    "db": "[[DB](https://www.deutsche-biographie.de/{}.html)]{{.asset-link}}",
+    "mgg":          "[MGG](https://www.mgg-online.com/mgg/stable/{})",
+    "grove":        "[Grove](https://doi.org/{})",
+    "wikipedia_de": "[{{{{< fa brands wikipedia-w >}}}} (de)](https://de.wikipedia.org/wiki/{})",
+    "wikipedia_cs": "[{{{{< fa brands wikipedia-w >}}}} (cs)](https://cs.wikipedia.org/wiki/{})",
+    "wikipedia_en": "[{{{{< fa brands wikipedia-w >}}}} (en)](https://en.wikipedia.org/wiki/{})",
+    "oeml":         "[ÖML](https://doi.org/{})",
+    "oebl":         "[ÖBL](https://doi.org/{})",
+    "db":           "[DB](https://www.deutsche-biographie.de/{}.html)",
 }
 
 AUTHORITIES = {
-    "gnd": "[[GND](https://d-nb.info/gnd/{})]{{.asset-link}}",
-    "viaf": "[[VIAF](https://viaf.org/viaf/{})]{{.asset-link}}"
+    "gnd":  "[GND](https://d-nb.info/gnd/{})",
+    "viaf": "[VIAF](https://viaf.org/viaf/{})"
 }
 
 ARCHIVES = {
-    "imslp": "[[IMSLP](https://imslp.org/wiki/Category:{})]{{.asset-link}}",
-    "cpdl": "[[CPDL](https://www.cpdl.org/wiki/index.php/{})]{{.asset-link}}"
+    "imslp": "[IMSLP](https://imslp.org/wiki/Category:{})",
+    "cpdl":  "[CPDL](https://www.cpdl.org/wiki/index.php/{})"
 }
 
 Composer = namedtuple("Composer", "last first suffix", defaults=["", ""])
@@ -140,10 +141,7 @@ def format_metadata(metadata: dict) -> dict:
     metadata["id_slug"] = slugify(metadata["id"])
 
     # asset links
-    if "assets_gh" in metadata:
-        metadata = format_asset_list("assets_gh", metadata)
-    else:
-        metadata = format_asset_list("assets_server", metadata)
+    metadata = format_asset_list(metadata)
 
     return metadata
 
@@ -180,23 +178,22 @@ def slugify(s: str) -> str:
     return slug
 
 
-def make_part_name(filename: str, extension: str) -> str:
+def make_part_name(filename: str) -> str:
     """Formats a part filename.
 
     Args:
         filename: part file name
-        extension: part file extension
 
     Returns:
         Reformatted part name.
     """
-    if filename == "midi_collection.zip":
+    if filename == ASSET_MIDI:
         return filename
 
-    if filename.startswith("full_score"):
-        return FULL_SCORE_ASSET_NAME
+    if filename == "full_score.pdf":
+        return ASSET_FULL_SCORE
 
-    name = filename.removesuffix(extension)
+    name = filename.removesuffix(".pdf")
     if name.startswith("coro_"):
         name = re.sub("_(.+)$", " (\\1)", name)
 
@@ -206,70 +203,78 @@ def make_part_name(filename: str, extension: str) -> str:
     return name
 
 
-def format_asset_list(asset_key: str, metadata: dict) -> dict:
+def format_asset_list(metadata: dict) -> dict:
     """Formats asset list.
 
     Args:
-        asset_key: key of dict entry with assets
         metadata: metadata
 
     Returns:
         metadata with formatted asset and MIDI links
     """
 
-    asset_link_github = "](https://github.com/edition-esser-skala/{repo}/releases/download/{version}/{file})]{{.asset-link}}"
+    asset_link = "[{}]({})"
 
-    asset_link_server = "](https://edition.esser-skala.at/assets/pdf/{repo}/{work}/{file})]{{.asset-link}}"
+    try:
+        asset_files = metadata["assets_gh"]
+        work = ""
+    except KeyError:
+        asset_files = [a.replace(".ly", ".pdf")
+                       for a in metadata["assets_server"]] + [ASSET_MIDI]
+        work = metadata["work_dir"] + "/"
 
-    if asset_key == "assets_gh":  # assets on GitHub
-        assets = {
-            make_part_name(asset, ".pdf"):
-            asset_link_github.format(
-                repo=metadata["repo"],
-                version=metadata["latest_version"],
-                file=asset
-            )
-            for asset in metadata[asset_key]
-        }
+    asset_urls = {
+        make_part_name(f):
+        f"https://edition.esser-skala.at/assets/{metadata['repo']}/{work}{f}"
+        for f in asset_files
+    }
 
-        midi_file = "midi_collection.zip"
-        midi_link = None
-        if midi_file in assets:
-            midi_link = assets[midi_file]
-            del assets[midi_file]
-
-    else:  # assets on server
-        assets = {
-            make_part_name(asset, ".ly"):
-            asset_link_server.format(
-                repo=metadata["repo"],
-                work=metadata["work_dir"],
-                file=asset.replace(".ly", ".pdf")
-            )
-            for asset in metadata[asset_key]
-        }
-
-        midi_link = asset_link_server.format(
-            repo=metadata["repo"],
-            work=metadata["work_dir"],
-            file="midi_collection.zip"
+    # move midi asset to separate variable
+    try:
+        midi_link = asset_link.format(
+            "{{< fa music >}}",
+            asset_urls[ASSET_MIDI]
         )
+        del asset_urls[ASSET_MIDI]
+    except KeyError:
+        midi_link = None
 
     # sort asset list and move full score to the front
-    asset_names = sorted(assets.keys())
+    asset_names = sorted(asset_urls.keys())
     try:
-        asset_names.remove(FULL_SCORE_ASSET_NAME)
-        asset_names.insert(0, FULL_SCORE_ASSET_NAME)
+        asset_names.remove(ASSET_FULL_SCORE)
+        asset_names.insert(0, ASSET_FULL_SCORE)
     except ValueError:
         pass
 
+    write_assets(asset_urls, metadata)
     metadata["asset_links"] = " ".join(
-        [f"[[{k}{assets[k]}" for k in asset_names]
+        [asset_link.format(n, asset_urls[n]) for n in asset_names]
     )
-    if midi_link:
-        midi_link = "[[{{< fa music >}}" + midi_link
     metadata["midi"] = midi_link
     return metadata
+
+
+def write_assets(asset_urls: dict, metadata: dict) -> None:
+    """
+    Write assets URLs on the server and their corresponding
+    GitHub release URL to a CSV file.
+
+    Args:
+        asset_urls: asset URLs on the server
+        metadata: work metadata
+    """
+
+    url_gh = ("https://github.com/edition-esser-skala/" +
+              metadata["repo"] +
+              "/releases/download/" +
+              metadata["latest_version"] +
+              "/")
+
+    with open("data_generated/" + metadata["repo"] + ".csv",
+              "w", encoding="utf8") as f:
+        f.writelines([f"{url},{url_gh}{os.path.basename(url)}\n"
+                      for url in asset_urls.values()])
 
 
 def format_work_entry(work: dict) -> tuple[str, str]:

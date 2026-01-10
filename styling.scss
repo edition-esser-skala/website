@@ -1,7 +1,6 @@
-/*-- scss:defaults --*/
-
 /*-- scss:rules --*/
 
+// navbar links
 .nav-link {
   color: white;
 }
@@ -22,6 +21,7 @@
   color: #ccc;
 }
 
+// work and composer table
 table.work-table, table.composer-table {
   border: 0;
   font-size: 1em;
@@ -39,24 +39,10 @@ table.work-table th {
 
 table.work-table a, table.composer-table a {
   text-decoration: none;
-}
-
-.asset-link {
   margin-right: .4em;
 }
 
-.work-subtitle {
-  font-weight: 400;
-}
-
-.composer-details {
-  margin: 1em 0 2em 0 !important;
-  padding: 1em;
-  background-color: #eee;
-  border-radius: 10px;
-}
-
-// overview table on project page
+// overview table
 table.overview-table {
   font-size: .85em;
 }
@@ -78,4 +64,17 @@ table.overview-table td {
 
 table.overview-table a {
   text-decoration: none;
+  margin-right: .4em;
+}
+
+// misc styles
+.work-subtitle {
+  font-weight: 400;
+}
+
+.composer-details {
+  margin: 1em 0 2em 0 !important;
+  padding: 1em;
+  background-color: #eee;
+  border-radius: 10px;
 }

@@ -80,6 +80,7 @@ def collect_metadata(gh_org: Organization,
     Args:
         gh_org: GitHub organization
         ignored_repos: list of ignored repositories
+        collection_repos: list of collection repositories
 
     Returns:
         work metadata
@@ -93,7 +94,7 @@ def collect_metadata(gh_org: Organization,
 
     works: dict[Composer, list] = {}
 
-    for counter, repo in enumerate(repos[:20]):
+    for counter, repo in enumerate(repos):
         counter_str = f"({counter + 1}/{repos.totalCount})"
 
         if repo.name in ignored_repos:
@@ -160,7 +161,6 @@ def generate_score_pages(works: dict) -> None:
     """
 
     for composer_qmd in os.listdir("scores_template"):
-    # for composer_qmd in ["werner.qmd", "caldara.qmd", "gugl.qmd", "galuppi.qmd"]:
         print("Formatting", composer_qmd)
         page = frontmatter.load("scores_template/" + composer_qmd)
         composer = Composer(**page["composer_data"]["name"])
