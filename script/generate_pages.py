@@ -26,6 +26,8 @@ except ModuleNotFoundError:
 
 
 PAGE_TEMPLATE = """\
+{hero}
+
 {composer_details}
 
 {intro}
@@ -168,6 +170,12 @@ def generate_score_pages(works: dict) -> None:
             print("  Warning: No work found.")
             continue
 
+        # hero image
+        try:
+            hero = f'![]({page["composer_data"]["hero"]}){{fig-align="center"}}'
+        except KeyError:
+            hero = ""
+
         # composer details
         composer_details = parse_composer_details(page["composer_data"])
 
@@ -189,8 +197,8 @@ def generate_score_pages(works: dict) -> None:
 
         # save composer page
         page["title"] = format_page_title(page["composer_data"]["name"])
-        # page["toc"] = False
         page.content = PAGE_TEMPLATE.format(
+            hero=hero,
             composer_details=composer_details,
             intro=page["composer_data"].get("intro", ""),
             table_rows=table_rows,
