@@ -24,11 +24,6 @@ composer_data:
     imslp: Reutter,_Georg
     cpdl: Georg_Reutter
   literature:
-    - type: book
-      author: Norbert Hofer
-      title: Thematisches Verzeichnis der Werke von Georg Reutter jun.
-      publisher: Typescript, A-Wn
-      location: Wien
-      year: 1947
+    - Norbert Hofer (1947). Thematisches Verzeichnis der Werke von Georg Reutter jun. Typescript, A-Wn. <https://data.onb.ac.at/rec/AC14273769>
   cv: Georg Reutter the Younger received musical lessons from his father and Antonio Caldara, who introduced him to the current opera style. After a trip to Italy around 1730, he was appointed court composer in 1731. In 1736 he took over the duties of first cathedral music director at St. Stephan, and in 1738 the office was officially transferred to him. In 1767 Reutter received the title of first court conductor. He was one of the most influential and prolific Viennese church, opera and oratorio composers of his time; his church works were performed until the 19th century. His operatic and instrumental style reveals in many ways the clear influence of Caldara in connection with the current stylistic trends originating from Naples.
 ---

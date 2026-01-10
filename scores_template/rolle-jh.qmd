@@ -22,11 +22,6 @@ composer_data:
     imslp: Rolle,_Johann_Heinrich
     cpdl: Johann_Heinrich_Rolle
   literature:
-    - type: book
-      author: Andreas Waczkat
-      title: Johann Heinrich Rolles musikalische Dramen. Theorie, Werkbestand und Überlieferung einer Gattung im Kontext bürgerlicher Empfindsamkeit
-      publisher: ortus musikverlag
-      location: Beeskow
-      year: 2007
+    - Andreas Waczkat (2007). Johann Heinrich Rolles musikalische Dramen. Theorie, Werkbestand und Überlieferung einer Gattung im Kontext bürgerlicher Empfindsamkeit. ortus musikverlag, Beeskow.
   cv: Johann Heinrich Rolle was born as the son of Christian Friedrich, who took over his musical training. From 1734 to 1737 he was organist at the St. Petri Church in Magdeburg. Then Rolle went to Leipzig to study law, and later moved to Berlin, where he worked as a legal advisor for a short time. In 1741 he received a position in Frederick II's chapel, first as a violinist and then as a viola player. In 1746 Rolle returned to Magdeburg as organist in the St. John's Church. In 1752 he succeeded his father as cantor of the high school. He also took on the role of city music director. His compositions are in the Baroque tradition, but are already influenced by the transition from the High Baroque to the so-called gallant style of the Rococo.
 ---
