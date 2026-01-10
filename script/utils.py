@@ -111,10 +111,10 @@ def format_metadata(metadata: dict) -> dict:
     """Preprocesses metadata.
 
     Args:
-        metadata (dict): Metadata extracted from metadata.yaml
+        metadata: Metadata extracted from metadata.yaml
 
     Returns:
-        dict: Reformatted metadata.
+        Reformatted metadata
     """
 
     # add an id
@@ -152,10 +152,10 @@ def latex_to_text(s: str) -> str:
     """Converts LaTeX commands to plain text.
 
     Args:
-        s (str): string to format
+        s: string to format
 
     Returns:
-        str: reformatted string.
+        reformatted string
     """
     res = re.sub(r"\\newline", " ", s)
     res = re.sub(r"\\\\", " ", res)
@@ -184,11 +184,11 @@ def make_part_name(filename: str, extension: str) -> str:
     """Formats a part filename.
 
     Args:
-        filename (str): part file name
-        extension (str): part file extension
+        filename: part file name
+        extension: part file extension
 
     Returns:
-        str: Reformatted part name.
+        Reformatted part name.
     """
     if filename == "midi_collection.zip":
         return filename
@@ -210,11 +210,11 @@ def format_asset_list(asset_key: str, metadata: dict) -> dict:
     """Formats asset list.
 
     Args:
-        asset_key (str): key of dict entry with assets
-        metadata (dict): metadata
+        asset_key: key of dict entry with assets
+        metadata: metadata
 
     Returns:
-        dict: metadata with formatted asset and MIDI links
+        metadata with formatted asset and MIDI links
     """
 
     asset_link_github = "](https://github.com/edition-esser-skala/{repo}/releases/download/{version}/{file})]{{.asset-link}}"
@@ -273,7 +273,15 @@ def format_asset_list(asset_key: str, metadata: dict) -> dict:
 
 
 def format_work_entry(work: dict) -> tuple[str, str]:
-    """Formats the work entry."""
+    """Formats the work entry.
+
+    Args:
+        work: work metadata
+
+    Returns:
+        (1) row for TOC table
+        (2) work entry
+    """
 
     work = format_metadata(work)
 

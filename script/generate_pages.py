@@ -156,7 +156,7 @@ def generate_score_pages(works: dict) -> None:
     """Generates one markdown file for each composer.
 
     Args:
-        works (dict): works metadata
+        works: works metadata
     """
 
     for composer_qmd in os.listdir("scores_template"):
