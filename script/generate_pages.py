@@ -1,10 +1,10 @@
-"""Prepare score and project pages from metadata in GitHub score repos."""
+"""Prepare score pages from metadata in GitHub score repos."""
 
 from operator import itemgetter
 import os
 import pickle
 import re
-from typing import Optional, Iterable
+from typing import Optional
 
 import frontmatter  # type: ignore
 from github import Github
@@ -12,12 +12,12 @@ from github.Organization import Organization
 from github.GithubException import UnknownObjectException
 import strictyaml  # type: ignore
 
-from common_functions import (Composer,
-                              format_metadata,
-                              format_work_entry,
-                              get_coll_metadata,
-                              get_tag_date,
-                              parse_composer_details)
+from utils import (Composer,
+                   format_page_title,
+                   format_work_entry,
+                   get_coll_metadata,
+                   get_tag_date,
+                   parse_composer_details)
 
 try:
     from pat import TOKEN
@@ -47,10 +47,10 @@ def get_markdown_file(gh_org: Organization,
     """Downloads a markdown file that should be used as page.
 
     Args:
-        gh_org (Organization): GitHub organization
-        repo_file (str): file name in repository
-        out_file (str): output file name
-        title (str): page title
+        gh_org: GitHub organization
+        repo_file: file name in repository
+        out_file: output file name
+        title: page title
     """
     header = (
         "---\n"
@@ -68,21 +68,21 @@ def get_markdown_file(gh_org: Organization,
 
     doc = header + re.sub("# Contents.+?##", "#", doc, flags=re.DOTALL)
 
-    with open(f"{out_file}", "w", encoding="utf-8") as f:
+    with open(out_file, "w", encoding="utf-8") as f:
         f.write(doc)
 
 
 def collect_metadata(gh_org: Organization,
-                     ignored_repos: Optional[Iterable[str]]=None,
-                     collection_repos: Optional[Iterable[str]]=None) -> dict:
+                     ignored_repos: Optional[list[str]]=None,
+                     collection_repos: Optional[list[str]]=None) -> dict:
     """Collects work metadata from YAML files in GitHub repos.
 
     Args:
-        gh_org (Organization): GitHub organization
-        ignored_repos (Optional[Iterable[str]]): list of ignored repositories
+        gh_org: GitHub organization
+        ignored_repos: list of ignored repositories
 
     Returns:
-        dict: work metadata
+        work metadata
     """
 
     repos = gh_org.get_repos(sort="updated")
@@ -93,7 +93,7 @@ def collect_metadata(gh_org: Organization,
 
     works: dict[Composer, list] = {}
 
-    for counter, repo in enumerate(repos):
+    for counter, repo in enumerate(repos[:20]):
         counter_str = f"({counter + 1}/{repos.totalCount})"
 
         if repo.name in ignored_repos:
@@ -141,7 +141,7 @@ def collect_metadata(gh_org: Organization,
             pass
 
         if repo.name in collection_repos:
-            metadata["collection"] = get_coll_metadata(repo.name, tags[0].name)
+            metadata["collection"] = get_coll_metadata(metadata)
 
         c = Composer(**metadata["composer"])
         try:
@@ -159,16 +159,20 @@ def generate_score_pages(works: dict) -> None:
         works (dict): works metadata
     """
 
-    for composer_qmd in ["werner.qmd", "caldara.qmd"]:
-    # for composer_qmd in os.listdir("scores_template"):
+    for composer_qmd in os.listdir("scores_template"):
+    # for composer_qmd in ["werner.qmd", "caldara.qmd", "gugl.qmd", "galuppi.qmd"]:
         print("Formatting", composer_qmd)
         page = frontmatter.load("scores_template/" + composer_qmd)
         composer = Composer(**page["composer_data"]["name"])
+        if composer not in works:
+            print("  Warning: No work found.")
+            continue
 
         # composer details
         composer_details = parse_composer_details(page["composer_data"])
 
-        # flatten work metadata to a list of work dicts
+        # flatten work metadata to a list of dicts,
+        # each of which describes a work
         works_all = []
         for work in works[composer]:
             if "collection" in work:
@@ -177,17 +181,18 @@ def generate_score_pages(works: dict) -> None:
                 works_all.append(work)
 
         # get table rows and work details
-        work_entries = [format_work_entry(format_metadata(w))
-                        for w in sorted(works_all, key=itemgetter("title"))]
+        work_data = [format_work_entry(w)
+                     for w in sorted(works_all, key=itemgetter("title"))]
 
-        table_rows = "\n".join([r for r, _ in work_entries])
-        work_details = "\n".join([d for _, d in work_entries])
+        table_rows = "\n".join([r for r, _ in work_data])
+        work_details = "\n".join([d for _, d in work_data])
 
         # save composer page
+        page["title"] = format_page_title(page["composer_data"]["name"])
         page["toc"] = False
         page.content = PAGE_TEMPLATE.format(
             composer_details=composer_details,
-            intro=page["composer_data"].get("intro"),
+            intro=page["composer_data"].get("intro", ""),
             table_rows=table_rows,
             work_details=work_details
         )
@@ -232,13 +237,13 @@ def main() -> None:
     #                   "technical-documentation.qmd",
     #                   "Technical documentation",)
 
-    all_works = collect_metadata(gh_org, ignored_repos, collection_repos)
-    with open("works_metadata.pkl", "wb") as f:
-        pickle.dump(all_works, f)
+    # all_works = collect_metadata(gh_org, ignored_repos, collection_repos)
+    # with open("works_metadata.pkl", "wb") as f:
+    #     pickle.dump(all_works, f)
 
-    # with open("works_metadata.pkl", "rb") as f:
-    #     all_works = pickle.load(f)
-    # generate_score_pages(all_works)
+    with open("works_metadata.pkl", "rb") as f:
+        all_works = pickle.load(f)
+    generate_score_pages(all_works)
 
     print(gh.get_rate_limit().resources.core)
 

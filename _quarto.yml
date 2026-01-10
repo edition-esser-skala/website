@@ -33,6 +33,10 @@ website:
         - section: "C"
           contents:
             - scores/caldara.qmd
+        - section: "G"
+          contents:
+            - scores/galuppi.qmd
+            - scores/gugl.qmd
         - section: "K"
           contents:
             - scores/kobrich.qmd
@@ -47,6 +51,3 @@ format:
       - brand
       - styling.scss
     toc: true
-
-
-

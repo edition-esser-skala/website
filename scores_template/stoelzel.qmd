@@ -1,5 +1,4 @@
 ---
-title: "Stölzel, Gottfried Heinrich"
 composer_data:
   name:
     last: Stölzel

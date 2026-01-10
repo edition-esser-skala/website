@@ -1,5 +1,4 @@
 ---
-title: "Caldara, Antonio"
 composer_data:
   name:
     last: Caldara

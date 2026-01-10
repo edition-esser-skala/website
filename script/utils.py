@@ -104,12 +104,6 @@ ARCHIVES = {
     "cpdl": "[[CPDL](https://www.cpdl.org/wiki/index.php/{})]{{.asset-link}}"
 }
 
-REFERENCE_TEMPLATE = {
-    "article": "- {author} ({year}). {title}. {journal} {volume}:{pages}.",
-    "book": "- {author} ({year}). {title}. {publisher}, {location}.",
-    "website": "- {author} ({year}). {title}."
-}
-
 Composer = namedtuple("Composer", "last first suffix", defaults=["", ""])
 
 
@@ -281,6 +275,8 @@ def format_asset_list(asset_key: str, metadata: dict) -> dict:
 def format_work_entry(work: dict) -> tuple[str, str]:
     """Formats the work entry."""
 
+    work = format_metadata(work)
+
     # title
     title = (
         '### {title}<br/>[{subtitle}]{{.work-subtitle}}'
@@ -330,7 +326,7 @@ def format_work_entry(work: dict) -> tuple[str, str]:
     res.append(
         row.format(
             "source",
-            f"[GitHub](https://github.com/edition-esser-skala/{work['repo']})"
+            f"[GitHub ({work['latest_version']}, {work['latest_date']})](https://github.com/edition-esser-skala/{work['repo']})"
         )
     )
 
@@ -343,41 +339,14 @@ def format_work_entry(work: dict) -> tuple[str, str]:
     return TABLEROW_TEMPLATE.format(**work), "\n".join(res)
 
 
-def format_reference(ref: dict) -> str:
-    """Format a reference.
-
-    Args:
-        ref (list): reference details (author, title, ...)
-
-    Returns:
-        str: formatted reference
-    """
-
-    # format the author(s): "A" or "A, B" or "A, B, and C"
-    if isinstance(ref["author"], str):
-        authors = ref["author"]
-    else:  # list of authors
-        if len(ref["author"]) == 2:
-            authors = f'{ref["author"][0]} and {ref["author"][1]}'
-        if len(ref["author"]) > 2:
-            authors = ref["author"][:-1]
-            authors = ", ".join(authors) + ", and" + ref["author"][-1]
-    ref["author"] = authors
-
-    if "url" in ref:
-        ref["title"] = f'[{ref["title"]}]({ref["url"]})'
-
-    return REFERENCE_TEMPLATE[ref["type"]].format(**ref)
-
-
 def parse_composer_details(data: dict) -> str:
-    """Parse composer details (dates, links, cv ...) from a YAML file.
+    """Parse composer details from a YAML file.
 
     Args:
-        file (str): YAML file with composer details
+        data: YAML file with composer details
 
     Returns:
-        str: Markdown string to be included in the webpage
+        composer details formattted as markdown
     """
 
     # born date and possibly location
@@ -419,8 +388,8 @@ def parse_composer_details(data: dict) -> str:
     literature = ""
     if "literature" in data:
         literature = "\n".join(
-            ["#### Literature"] +
-            [format_reference(r) for r in data["literature"]]
+            ["#### Literature\n"] +
+            [f"- {r}" for r in data["literature"]]
         )
 
     return INTRO_TEMPLATE.format(
@@ -435,22 +404,34 @@ def parse_composer_details(data: dict) -> str:
 
 
 def get_tag_date(tag: Tag) -> str:
-    """Return the date of a git tag in ISO 8601 format."""
+    """Return the date of a git tag in ISO 8601 format.
+
+    Args:
+        tag: git tag
+
+    Returns:
+        tag date
+    """
     return (dateutil.parser.parse(tag.commit.commit.last_modified)
-                          .strftime("%Y-%m-%d"))
+                           .strftime("%Y-%m-%d"))
 
 
-def get_coll_metadata(repo: str,
-                      latest_tag: str) -> list:
-    """Collects metadata for collection repos."""
+def get_coll_metadata(metadata: dict) -> list:
+    """Collects metadata for collection repos.
 
-    print("  -> Adding collection repository", repo)
+    Args:
+        metadata: metadata of parent repository
+
+    Returns:
+        work metadata
+    """
 
     with tempfile.TemporaryDirectory() as repo_dir:
         Repo.clone_from(
-            f"https://github.com/edition-esser-skala/{repo}",
+            "https://github.com/edition-esser-skala/" + metadata["repo"],
             repo_dir,
-            multi_options=["--depth 1", f"--branch {latest_tag}"]
+            multi_options=["--depth 1",
+                           "--branch " + metadata["latest_version"]]
         )
 
         try:
@@ -473,11 +454,25 @@ def get_coll_metadata(repo: str,
             print(f"     {counter_str} Adding {work_dir}")
             with open(f"{repo_dir}/works/{work_dir}/metadata.yaml",
                       encoding="utf-8") as f:
-                metadata = strictyaml.load(f.read()).data
+                work = strictyaml.load(f.read()).data
 
-            metadata["repo"] = repo
-            metadata["work_dir"] = work_dir
-            metadata["assets_server"] = os.listdir(f"{repo_dir}/works/{work_dir}/scores")
-            works.append(metadata)
+            work["repo"] = metadata["repo"]
+            work["latest_version"] = metadata["latest_version"]
+            work["latest_date"] = metadata["latest_date"]
+            work["work_dir"] = work_dir
+            work["assets_server"] = os.listdir(f"{repo_dir}/works/{work_dir}/scores")
+            works.append(work)
 
     return works
+
+
+def format_page_title(name: dict) -> str:
+    """Format the page title."""
+
+    res = name["last"]
+    try:
+        res += ", " + name["first"]
+        res += " " + name["suffix"]
+    except KeyError:
+        pass
+    return res

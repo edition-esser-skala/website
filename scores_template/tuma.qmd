@@ -1,5 +1,4 @@
 ---
-title: "Tůma, František Ignác Antonín"
 composer_data:
   name:
     last: Tůma

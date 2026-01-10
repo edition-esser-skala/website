@@ -1,5 +1,4 @@
 ---
-title: "Kobrich, Johann Anton"
 composer_data:
   name:
     last: Kobrich
