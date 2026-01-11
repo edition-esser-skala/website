@@ -74,12 +74,11 @@ INTRO_TEMPLATE = """\
 |*links*|{links}|
 |*authorities*|{authorities}|
 |*archives*|{archives}|
+|*literature*|{literature}|
 
 : {{tbl-colwidths="[15,85]" .composer-table}}
 
 {cv}
-
-{literature}
 :::
 """
 
@@ -360,14 +359,14 @@ def format_work_entry(work: dict, page_composer: Composer) -> tuple[str, str]:
     return TABLEROW_TEMPLATE.format(**work), "\n".join(res)
 
 
-def parse_composer_details(data: dict) -> str:
-    """Parse composer details from a YAML file.
+def format_composer_details(data: dict) -> str:
+    """Format composer details from YAML front  matter.
 
     Args:
-        data: YAML file with composer details
+        data:dict with composer details
 
     Returns:
-        composer details formattted as markdown
+        composer details formatted as markdown
     """
 
     # born date and possibly location
@@ -385,33 +384,30 @@ def parse_composer_details(data: dict) -> str:
             died = f'{data["died"]["date"]} ({data["died"]["location"]})'
 
     # encyclopedia links (if available)
-    links = "-"
+    links = "–"
     if "encyclopedia" in data:
         links = " ".join([ENCYCLOPEDIAS[k].format(v)
                           for k, v in data["encyclopedia"].items()])
 
     # authority files (if available)
-    authorities = "-"
+    authorities = "–"
     if "authority" in data:
         authorities = " ".join([AUTHORITIES[k].format(v)
                                 for k, v in data["authority"].items()])
 
     # sheet music archives (if available)
-    archives = "-"
+    archives = "–"
     if "archive" in data:
         archives = " ".join([ARCHIVES[k].format(v)
                              for k, v in data["archive"].items()])
 
+    # literature (if available)
+    literature = "–"
+    if "literature" in data:
+        literature = data["literature"]
+
     # cv (if available)
     cv = data.get("cv", "")
-
-    # literature (if available)
-    literature = ""
-    if "literature" in data:
-        literature = "\n".join(
-            ["#### Literature\n"] +
-            [f"- {r}" for r in data["literature"]]
-        )
 
     return INTRO_TEMPLATE.format(
         born=born,

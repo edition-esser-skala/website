@@ -21,7 +21,6 @@ composer_data:
   archive:
     imslp: Homilius,_Gottfried_August
     cpdl: Gottfried_August_Homilius
-  literature:
-    - Uwe Wolf (2014). Gottfried August Homilius. Thematisches Verzeichnis der musikalischen Werke (HoWV). Carus, Stuttgart.
+  literature: "@Wolf2014"
   cv: After attending the Annenschule in Dresden, Homilius studied law in Leipzig. He was already musically active there and temporarily represented the organist at the Nikolaikirche. He was probably one of Johann Sebastian Bach's immediate circle of students. From 1742 Homilius was organist at the Frauenkirche in Dresden and from 1755 until his death he was organist and music director at the three main churches in Dresden.
 ---

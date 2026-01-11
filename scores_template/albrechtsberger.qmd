@@ -22,7 +22,6 @@ composer_data:
   archive:
     imslp: Albrechtsberger,_Johann_Georg
     cpdl: Johann_Georg_Albrechtsberger
-  literature:
-    - Dorothea Schröder (1987). Die geistlichen Vokalkompositionen Johann Georg Albrechtsbergers. Thematischer Katalog. Verlag der Musikalienhandlung Karl Dieter Wagner, Hamburg.
+  literature: "@Schroeder1987"
   cv: Johann Georg Albrechtsberger became a choir boy at Klosterneuburg Abbey at the age of seven, learning the organ and music theory. In 1753 he went to Vienna to study philosophy at the Jesuit seminary. There he became friends with Michael Haydn, through whom he also met his brother Joseph Haydn. After positions in Győr, Maria Taferl and Melk, he became organist at St. Stephan in 1770 and registrar of the Carmelite Church in 1771. In 1772, Emperor Joseph II called him to Vienna as second court organist. After Leopold Hofmann's death in 1793, Albrechtsberger took over his position as cathedral music director and held this position until his death Albrechtsberger had numerous students, including Carl Czerny, Joseph Leopold von Eybler, Johann Nepomuk Hummel, and Ludwig van Beethoven.
 ---

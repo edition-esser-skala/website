@@ -20,7 +20,9 @@
 The root folder contains the usual files required by Quarto. Notably,
 
 - `.htaccess` redirects ARKs appended to the base URL to the ARK resolver at `ark.esser-skala.at`
+- `apa-6th-edition.csl` describes the citation style
 - `_brand.yml` applies brand guidelines ([details](https://posit-dev.github.io/brand-yml/))
+- `references.bib` contains BibTeX entries for references
 - `styling.scss` customizes CSS
 
 

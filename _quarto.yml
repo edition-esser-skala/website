@@ -117,3 +117,6 @@ format:
     toc: true
     grid:
       sidebar-width: 350px
+
+bibliography: references.bib
+csl: apa-6th-edition.csl

@@ -13,11 +13,11 @@ from github.GithubException import UnknownObjectException
 import strictyaml  # type: ignore
 
 from utils import (Composer,
+                   format_composer_details,
+                   format_composer_name,
                    format_work_entry,
                    get_coll_metadata,
-                   get_tag_date,
-                   parse_composer_details,
-                   format_composer_name)
+                   get_tag_date)
 
 try:
     from pat import TOKEN
@@ -181,7 +181,7 @@ def generate_score_pages(works: dict) -> None:
             hero = ""
 
         # composer details
-        composer_details = parse_composer_details(page["composer_data"])
+        composer_details = format_composer_details(page["composer_data"])
 
         # flatten work metadata to a list of dicts,
         # each of which describes a work

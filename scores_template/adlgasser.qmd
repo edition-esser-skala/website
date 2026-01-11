@@ -22,7 +22,6 @@ composer_data:
   archive:
     imslp: Adlgasser,_Anton_Cajetan
     cpdl: Anton_Cajetan_Adlgasser
-  literature:
-    - Christine D. de Catanzaro and Werner Rainer (2000). Anton Cajetan Adlgasser (1729–1777). A thematic catalogue of his works. Pendragon Press, Hillsdale, NY
+  literature: "@DeCatanzaro2000"
   cv: Anton Cajetan Adlgasser received his musical training in the chapel house of the Prince-Archbishop of Salzburg, where he was probably a student of Eberlin. In 1750 he was appointed court and cathedral organist in Salzburg, and in 1760 also organist at the Trinity Church. Adlgasser composed chamber and church music (also in the modern Italian style after his trip to Italy in 1764, where he met, among others, G. B. Martini) as well as final comedies and school dramas for the Salzburg University Theater. On December 21, 1777, Adlgasser suffered a stroke in the middle of playing the organ during the vespers service and died that same evening.
 ---
