@@ -240,21 +240,23 @@ def main() -> None:
     gh_org = gh.get_organization("edition-esser-skala")
 
     print(gh.get_rate_limit().resources.core)
-    # get_markdown_file(gh_org,
-    #                   "documents/editorial_guidelines.md",
-    #                   "editorial-guidelines.qmd",
-    #                   "Editorial guidelines")
-    # get_markdown_file(gh_org,
-    #                   "README.md",
-    #                   "technical-documentation.qmd",
-    #                   "Technical documentation",)
+    get_markdown_file(gh_org,
+                      "documents/editorial_guidelines.md",
+                      "editorial-guidelines.qmd",
+                      "Editorial guidelines")
+    get_markdown_file(gh_org,
+                      "README.md",
+                      "technical-documentation.qmd",
+                      "Technical documentation",)
 
-    # all_works = collect_metadata(gh_org, ignored_repos, collection_repos)
-    # with open("works_metadata.pkl", "wb") as f:
-    #     pickle.dump(all_works, f)
+    try:
+        with open("data_generated/works_metadata.pkl", "rb") as f:
+            all_works = pickle.load(f)
+    except FileNotFoundError:
+        all_works = collect_metadata(gh_org, ignored_repos, collection_repos)
+        with open("data_generated/works_metadata.pkl", "wb") as f:
+            pickle.dump(all_works, f)
 
-    with open("works_metadata.pkl", "rb") as f:
-        all_works = pickle.load(f)
     generate_score_pages(all_works)
 
     print(gh.get_rate_limit().resources.core)
