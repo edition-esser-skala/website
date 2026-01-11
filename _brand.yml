@@ -28,9 +28,12 @@ typography:
     - family: Fira Code
       source: bunny
       weight: [400, 700]
-  base: 
+  base:
     family: Source Sans Pro
     size: 1.1rem
-  monospace: Fira Code
+  monospace:
+    family: Fira Code
+    color: black
+    background-color: white
   link:
     color: red
