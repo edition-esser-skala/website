@@ -6,6 +6,5 @@ listing:
   sort: "date desc"
   type: default
   filter-ui: true
-  date-format: "D MMMM YYYY"
+  date-format: "D MMM YYYY"
 ---
-
