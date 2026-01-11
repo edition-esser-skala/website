@@ -10,7 +10,7 @@
 - `news`: blog posts, with general settings in `_metadata.yml`
 - `renv`: R environment data
 - `scores`: composer pages (automatically generated)
-- `scores_template`:
+- `_scores_templates`:
   - page templates for each composer
   - typically contains a single key `composer_data` in the YAML front matter
     - see `_template.qmd` or available composer metadata
