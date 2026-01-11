@@ -162,7 +162,11 @@ def generate_score_pages(works: dict) -> None:
         works: works metadata
     """
 
-    for composer_qmd in os.listdir("scores_template"):
+    composer_pages = os.listdir("scores_template")
+    if "_template.qmd" in composer_pages:
+        composer_pages.remove("_template.qmd")
+
+    for composer_qmd in composer_pages:
         print("Formatting", composer_qmd)
         page = frontmatter.load("scores_template/" + composer_qmd)
         composer = Composer(**page["composer_data"]["name"])

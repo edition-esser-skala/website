@@ -314,7 +314,7 @@ def format_work_entry(work: dict) -> tuple[str, str]:
     res.append(row.format("scores", work["asset_links"]))
 
     ## MIDI collection (optional)
-    if "midi" in work:
+    if work["midi"]:
         res.append(row.format("MIDI", work["midi"]))
 
     ## IMSLP link (optional)
