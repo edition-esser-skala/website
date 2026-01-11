@@ -277,11 +277,12 @@ def write_assets(asset_urls: dict, metadata: dict) -> None:
                       for url in asset_urls.values()])
 
 
-def format_work_entry(work: dict) -> tuple[str, str]:
+def format_work_entry(work: dict, page_composer: Composer) -> tuple[str, str]:
     """Formats the work entry.
 
     Args:
         work: work metadata
+        page_composer: composer whose works are presented on the current page
 
     Returns:
         (1) row for TOC table
@@ -291,8 +292,15 @@ def format_work_entry(work: dict) -> tuple[str, str]:
     work = format_metadata(work)
 
     # title
+    work["distinct_composer"] = ""
+    if "composer" in work and Composer(**work["composer"]) != page_composer:
+        work["distinct_composer"] = (
+            "["
+            + format_composer_name(work["composer"])
+            + "]{.work-composer}<br/>"
+        )
     title = (
-        '### {title}<br/>[{subtitle}]{{.work-subtitle}}'
+        '### {distinct_composer}{title}<br/>[{subtitle}]{{.work-subtitle}}'
         ' {{#work-{id_slug} .unlisted}}\n'
     )
     res = [title.format(**work), "|||\n|-|-|"]
@@ -479,8 +487,15 @@ def get_coll_metadata(metadata: dict) -> list:
     return works
 
 
-def format_page_title(name: dict) -> str:
-    """Format the page title."""
+def format_composer_name(name: dict) -> str:
+    """Format the composer name.
+
+    Args:
+        name: dict with fields last, first (optional) and suffix (optional)
+
+    Returns:
+        formatted composer name 'Last, First Suffix'
+    """
 
     res = name["last"]
     try:

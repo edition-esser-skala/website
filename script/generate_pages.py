@@ -13,11 +13,11 @@ from github.GithubException import UnknownObjectException
 import strictyaml  # type: ignore
 
 from utils import (Composer,
-                   format_page_title,
                    format_work_entry,
                    get_coll_metadata,
                    get_tag_date,
-                   parse_composer_details)
+                   parse_composer_details,
+                   format_composer_name)
 
 try:
     from pat import TOKEN
@@ -193,14 +193,14 @@ def generate_score_pages(works: dict) -> None:
                 works_all.append(work)
 
         # get table rows and work details
-        work_data = [format_work_entry(w)
+        work_data = [format_work_entry(w, composer)
                      for w in sorted(works_all, key=itemgetter("title"))]
 
         table_rows = "\n".join([r for r, _ in work_data])
         work_details = "\n".join([d for _, d in work_data])
 
         # save composer page
-        page["title"] = format_page_title(page["composer_data"]["name"])
+        page["title"] = format_composer_name(page["composer_data"]["name"])
         page.content = PAGE_TEMPLATE.format(
             hero=hero,
             composer_details=composer_details,
