@@ -9,12 +9,12 @@ description: Albrechtsberger · Eberlin · Eybler · Tůma · Werner · Zacher
 
 ### Albrechtsberger, Johann Georg
 
-- [Missa Praesentationis Beatae Mariae Virginis](scores/albrechtsberger.qmd#work-schal-a-i-23) SchAl A.I.23
+- [Missa Praesentationis Beatae Mariae Virginis](/scores/albrechtsberger.qmd#work-schal-a-i-23) SchAl A.I.23
 
 
 ### Eberlin, Johann Ernst
 
-- [Missa in B-flat major](scores/eberlin.qmd#work-hereb-42) HerEb 42
+- [Missa in B-flat major](/scores/eberlin.qmd#work-hereb-42) HerEb 42
 
 
 ### Eybler, Joseph Leopold Edler von
@@ -99,4 +99,4 @@ description: Albrechtsberger · Eberlin · Eybler · Tůma · Werner · Zacher
 
 ### Zacher, Johann Michael
 
-- [Missa Sancti Stephani](scores/werner.qmd#work-werw-b-s10) (Sonata and Kyrie)
+- [Missa Sancti Stephani](/scores/werner.qmd#work-werw-b-s10) (Sonata and Kyrie)

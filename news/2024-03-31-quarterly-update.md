@@ -23,7 +23,7 @@ description: Eybler · Haydn M · Kobrich · Reutter der Jüngere · Werner
 
 ### Kobrich, Johann Anton
 
-- [Wohlgeübter Organist](scores/kobrich.qmd)<br/>
+- [Wohlgeübter Organist](/scores/kobrich.qmd)<br/>
   A collection of preludes, fugues, and toccatas that was published in print in the 1760s. While the preludes and fugues are found in many libraries and archives, the only surviving specimen of the toccatas is preserved by the Zentral-­ und Hochschulbibliothek Luzern (Sondersammlung, KB B.36.a.fol.). Our edition is also available [in print](https://amazon.de/dp/B0CXQ4J7DG).
 
 

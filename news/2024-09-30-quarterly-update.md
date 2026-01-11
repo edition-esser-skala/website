@@ -37,7 +37,7 @@ description: Adlgasser · Caldara · Eybler · Haydn M · Tůma · Werner · Per
 
 ### Haydn, Johann Michael
 
-- [Exaltabo te Domine](scores/haydn.qmd#work-mh-547) MH 547
+- [Exaltabo te Domine](/scores/haydn.qmd#work-mh-547) MH 547
 
 
 ### Tůma, František Ignác Antonín

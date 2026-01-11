@@ -63,7 +63,7 @@ description: Boog · Caldara · Eybler · Fuchs · Galuppi · Haydn M · Hofmann
 
 ### Reutter der Jüngere, Georg
 
-- [Missa Sanctæ Rosaliæ](/scoresreutter-der-juengere.qmd#work-hofr-7-15) HofR 7/15<br/>
+- [Missa Sanctæ Rosaliæ](/scores/reutter-der-juengere.qmd#work-hofr-7-15) HofR 7/15<br/>
   This mass was formerly attributed to Leopold Hofmann (Missa festiva, A-Ed A 99).
 
 

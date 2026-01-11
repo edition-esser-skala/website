@@ -36,9 +36,9 @@ Notably, we do not list projects separately on the edition's website anymore, si
 
 ### Haydn, Johann Michael
 
-- [Ah ingrato m'inganni](scores/haydn.qmd#work-mh-70) MH 70<br/>
+- [Ah ingrato m'inganni](/scores/haydn.qmd#work-mh-70) MH 70<br/>
   An aria which is listed as lost in the catalogue of works, but the autograph manuscript has been discovered in the Bibliothèque nationale de France.
-- [Laudate Dominum](scores/haydn.qmd#work-mh-260) MH 260
+- [Laudate Dominum](/scores/haydn.qmd#work-mh-260) MH 260
 
 
 ### Tůma, František Ignác Antonín

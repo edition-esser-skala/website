@@ -40,7 +40,7 @@ We have also unearthed a hymn from the Dommusikarchiv Eisenstadt:
 
 ### Hofmann, Leopold
 
-- [Missa solemnis](/hofmann.qmd#work-proh-11) ProH 11
+- [Missa solemnis](/scores/hofmann.qmd#work-proh-11) ProH 11
 
 
 ### Königsperger, Marianus
