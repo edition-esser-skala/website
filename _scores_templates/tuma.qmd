@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 118624539
     viaf: 46947950
+    isni: 000000010896438X
   archive:
     imslp: Tůma,_František_Ignác_Antonín
     cpdl: František_Tůma

@@ -15,6 +15,7 @@ composer_data:
   authority:
     gnd: 143774468
     viaf: 2795053
+    isni: 0000000115866673
   archive:
     imslp: Fuchs_I,_Johann_Nepomuk
   literature: "@Hochradner2005"

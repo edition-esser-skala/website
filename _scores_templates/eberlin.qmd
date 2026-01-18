@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 11938700X
     viaf: 29724539
+    isni: 0000000083425995
   archive:
     imslp: Eberlin,_Johann_Ernst
     cpdl: Johann_Ernst_Eberlin

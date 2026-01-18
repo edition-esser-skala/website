@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 11950149X
     viaf: 432149196560774792559
+    isni: 000000008381136X
   archive:
     imslp: Aumannm_Franz_Josef
   cv: Franz Josef Aumann CanReg probably received his training in the Jesuit seminary in Krems between 1739 and 1745, then in the Vienna Jesuit convikt, where he met Michael Haydn and Johann Georg Albrechtsberger and probably received continuo lessons from Johann Nepomuk Boog. In 1753 Aumann entered the Augustinian Canons' Monastery of St. Florian and worked there as Regens chori from 1755. His works, which are in the local Viennese and Salzburg tradition, also show Neapolitan and Venetian influences and are handwritten and distributed throughout Austria and neighboring countries. His contrapuntal skills and colorful harmony impressed the young Anton Bruckner.

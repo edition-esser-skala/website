@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 119484749
     viaf: 17422006
+    isni: 000000010777930X
   archive:
     imslp: Hofmann,_Leopold
   literature: "@Prohaszka1964"

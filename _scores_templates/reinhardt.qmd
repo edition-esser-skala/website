@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 135347343
     viaf: 24849667
+    isni: 000000005520559X
   archive:
     imslp: Reinhardt,_Johann_Georg
   cv: Johann Georg Reinhardt was raised by his uncle Kilian and accepted into the Hofmusikkapelle in 1701. Nothing is known about his musical training. In 1710 he was appointed regular court organist; 1712 2nd court organist, 1728 as successor to Georg Reutter the Elder 1st court organist. In 1734 he received the title of “court composer”; he retired in 1740. From 1727 to 1742 he also worked at St. Stephan, and as early as 1725 he was mentioned as one of the six councilors of the St. Cecilia Brotherhood. Around 1730 he is said to have been choir regent of the Vienna Schottenstift.

@@ -16,6 +16,7 @@ composer_data:
   authority:
     gnd: 118744151
     viaf: 10641221
+    isni: 0000000032520095
   archive:
     imslp: Reindl,_Constantin
   cv: Reindl probably joined the Jesuit order as early as 1756 and studied theology and philosophy at the universities of Ingolstadt and Freiburg im Breisgau. He is recorded as music prefect in Dillingen in 1762. Reindl was ordained a priest in 1769 and settled in Lucerne in 1772, where he worked as a professor and music prefect at the Jesuit college. Through this activity he dominated Lucerne's musical life for more than 25 years.

@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 123146518
     viaf: 47026177
+    isni: 0000000108965497
   archive:
     imslp: Brixi,_František_Xaver
     cpdl: Franz_Xaver_Brixi

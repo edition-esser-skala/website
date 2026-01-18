@@ -16,6 +16,7 @@ composer_data:
   authority:
     gnd: 103857567
     viaf: 39643189
+    isni: 0000000081189271
   archive:
     imslp: Kobrich,_Johann_Anton
     cpdl: Johann_Anton_Kobrich

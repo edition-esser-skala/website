@@ -20,6 +20,7 @@ composer_data:
   authority:
     gnd: 104038187
     viaf: 52121214
+    isni:
   archive:
     imslp: Reutter_der_Ältere,_Georg
   cv: Georg Reutter the Elder may have been a student of Johann Caspar Kerll, whom he is said to have succeeded as organist at St. Stephan's in Vienna in 1686 (it is certain that he was in this position from 1694 to 1715). After a stay in Italy in 1694/95, he obtained a position as theorbist in 1697 (until 1703) and in 1700 as organist (until his death) at the Vienna Court Music Chapel. In 1712 he succeeded Johann Joseph Fux as 2nd Kapellmeister and in 1715 1st Kapellmeister at St. Stephan; In 1727/28 he handed over the second position as conductor to Johann Georg Reinhard. Reutter was highly valued as an instrumentalist by his contemporaries.

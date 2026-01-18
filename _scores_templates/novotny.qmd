@@ -18,6 +18,7 @@ composer_data:
   authority:
     gnd: 140647767
     viaf: 106895683
+    isni: 0000000077380719
   archive:
     imslp: Novotný,_Franz_Nikolaus
   cv: Franz Nikolaus Novotný was an organist and composer of Bohemian descent. His grandfather was a chancellor and bassist in the court orchestra of Paul I Esterházy; his father Johann was a student of Gregor Joseph Werner and also a civil servant, organist and composer. From 1765 to 1773, Novotný succeeded his father as organist in the castle church. He mainly composed church music, which was also performed by Joseph Haydn.

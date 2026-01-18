@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 118666584
     viaf: 2655601
+    isni: 0000000110355444
   archive:
     imslp: Caldara,_Antonio
     cpdl: Antonio_Caldara

@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 118546651
     viaf: 2656283
+    isni: 0000000122757870
   archive:
     imslp: Hasse,_Johann_Adolph
     cpdl: Johann_Adolph_Hasse

@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 118501704
     viaf: 44565176
+    isni: 0000000108936696
   archive:
     imslp: Albrechtsberger,_Johann_Georg
     cpdl: Johann_Georg_Albrechtsberger

@@ -18,6 +18,7 @@ composer_data:
   authority:
     gnd: 134832744
     viaf: 209478682
+    isni: 0000000080920317
   archive:
     imslp: Zechner,_Johann_Georg
   literature: "@Unger2025"

@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 119024586
     viaf: 8149106028468490892
+    isni: 0000000081232647
   archive:
     imslp: Adlgasser,_Anton_Cajetan
     cpdl: Anton_Cajetan_Adlgasser

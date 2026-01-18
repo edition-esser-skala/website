@@ -14,6 +14,7 @@ composer_data:
   authority:
     gnd: 103912010
     viaf: 39802490
+    isni: 0000000083748081
   archive:
     imslp: Kolberer,_Cajetan
   cv: The Benedictine monk Kolberer worked as a composer at the Andechs monastery.

@@ -18,6 +18,7 @@ composer_data:
   authority:
     gnd: 132293412
     viaf: 40532695
+    isni: 0000000079920280
   archive:
     imslp: Harrer,_Gottlob
     cpdl: Gottlob_Harrer

@@ -20,6 +20,7 @@ composer_data:
   authority:
     gnd: 102338469
     viaf: 56879438
+    isni: 0000000081362732
   archive:
     imslp: Reutter,_Georg
     cpdl: Georg_Reutter

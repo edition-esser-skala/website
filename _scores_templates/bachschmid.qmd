@@ -17,6 +17,7 @@ composer_data:
   authority:
     gnd: 12093745X
     viaf: 64271007
+    isni: 0000000055217056
   archive:
     imslp: Bachschmid,_Anton_Adam
   cv: Anton Adam Bachschmid was educated in the Melk abbey and later served as kapellmeister of the Eichstätt court. While his works were well received during his lifetime, he passed into oblivion in the 19th century.

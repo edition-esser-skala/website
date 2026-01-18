@@ -18,6 +18,7 @@ composer_data:
   authority:
     gnd: 119301199
     viaf: 24866393
+    isni: 0000000083655969
   archive:
     imslp: Kunzen,_Friedrich_Ludwig_Aemilius
   cv: Kunzen was born in Lübeck, where his father was an organist. After studying law in Kiel, he moved to Copenhagen to pursue a musical career. After further employments in Berlin, Frnkfurt, and Prague, he was offered the position of musical director of the Royal Orchestra in Copenhagen which he accepted in 1795. In 1809, he was appointed professor, and in 1811 he was honoured as a Knight of the Order of the Dannebrog and appointed a member of the Royal Swedish Academy of Music.

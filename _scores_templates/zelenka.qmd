@@ -18,6 +18,7 @@ composer_data:
   authority:
     gnd: 118808370
     viaf: 32793075
+    isni: 000000012278115X
   archive:
     imslp: Zelenka,_Jan_Dismas
     cpdl: Jan_Dismas_Zelenka

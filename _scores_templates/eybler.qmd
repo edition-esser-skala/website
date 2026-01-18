@@ -20,6 +20,7 @@ composer_data:
   authority:
     gnd: 118531522
     viaf: 51875149
+    isni: 0000000081306941
   archive:
     imslp: Eybler,_Joseph
     cpdl: Josef_von_Eybler

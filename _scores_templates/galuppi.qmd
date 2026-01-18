@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 118722700
     viaf: 22327261
+    isni: 0000000121238972
   archive:
     imslp: Galuppi,_Baldassare
     cpdl: Baldassare_Galuppi

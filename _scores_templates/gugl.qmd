@@ -17,6 +17,7 @@ composer_data:
   authority:
     gnd: 118699075
     viaf: 62343036
+    isni: 0000000039072897
   archive:
     imslp: Gugl,_Matthäus
   cv:

@@ -96,7 +96,8 @@ ENCYCLOPEDIAS = {
 
 AUTHORITIES = {
     "gnd":  "[GND](https://d-nb.info/gnd/{})",
-    "viaf": "[VIAF](https://viaf.org/viaf/{})"
+    "viaf": "[VIAF](https://viaf.org/viaf/{})",
+    "isni": "[ISNI](https://isni.org/isni/{})"
 }
 
 ARCHIVES = {

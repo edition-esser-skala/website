@@ -18,6 +18,7 @@ composer_data:
   authority:
     gnd: 118618458
     viaf: 10112575
+    isni: 0000000083562965
   archive:
     imslp: Stölzel,_Gottfried_Heinrich
     cpdl: Gottfried_Heinrich_Stölzel

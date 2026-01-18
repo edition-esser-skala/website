@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 11863142X
     viaf: 100248860
+    isni: 0000000116917751
   archive:
     imslp: Werner,_Gregor_Joseph
   literature: "@EsserSkalaWerW"

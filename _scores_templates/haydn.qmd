@@ -19,6 +19,7 @@ composer_data:
   authority:
     gnd: 115657754
     viaf: 74037803
+    isni: 0000000109160930
   archive:
     imslp: Haydn,_Michael
     cpdl: Johann_Michael_Haydn
