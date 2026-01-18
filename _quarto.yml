@@ -105,7 +105,6 @@ website:
             - scores/wolf.qmd
         - section: Z
           contents:
-            - scores/zacher.qmd
             - scores/zechner.qmd
             - scores/zelenka.qmd
 format:

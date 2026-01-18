@@ -236,6 +236,12 @@ def main() -> None:
         "werner-collected-works"
     ]
 
+    try:
+        os.remove("data_generated/assets.csv")
+        os.remove("data_generated/ark_mapping_table.csv")
+    except FileNotFoundError:
+        pass
+
     gh = Github(TOKEN)
     gh_org = gh.get_organization("edition-esser-skala")
 

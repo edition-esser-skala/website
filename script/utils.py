@@ -271,10 +271,23 @@ def write_assets(asset_urls: dict, metadata: dict) -> None:
               metadata["latest_version"] +
               "/")
 
-    with open("data_generated/" + metadata["repo"] + ".csv",
-              "w", encoding="utf8") as f:
+    with open("data_generated/assets.csv",
+              "a", encoding="utf8") as f:
         f.writelines([f"{url},{url_gh}{os.path.basename(url)}\n"
                       for url in asset_urls.values()])
+    if "ark" in metadata:
+        blade = metadata["ark"].replace("68748/e1", "")
+        lines = []
+        for url in asset_urls.values():
+            part = url.split("/")[-1].replace(".pdf", "")
+            if part == "full_score":
+                qualifier = ""
+            else:
+                qualifier = "/" + part
+            lines.append(f"{blade}{qualifier},{url}\n")
+        with open("data_generated/ark_mapping_table.csv",
+                  "a", encoding="utf8") as f:
+            f.writelines(lines)
 
 
 def format_work_entry(work: dict, page_composer: Composer) -> tuple[str, str]:
@@ -317,6 +330,15 @@ def format_work_entry(work: dict, page_composer: Composer) -> tuple[str, str]:
 
     ## scoring
     res.append(row.format("scoring", work["scoring"]))
+
+    ## ARK (optional)
+    if "ark" in work:
+        res.append(
+            row.format(
+                "ARK",
+                f"[ark:{work['ark']}](https://n2t.net/ark:{work['ark']})"
+            )
+        )
 
     ## full score and parts
     res.append(row.format("scores", work["asset_links"]))
