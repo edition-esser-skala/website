@@ -14,6 +14,7 @@ A semi-opaque Archival Resource Key ([ARK](https://arks.org)) is assigned to eac
   |-|-|-|
   |Eybler|jle|HerEy number|
   |Haydn|jmh|MH number|
+  |Reutter der Jüngere|grj|HofR number|
   |Tůma|fit|TumW number|
   |Werner|gjw|WerW number|
   |Zelenka|jdz|ZWV number|
