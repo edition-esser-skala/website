@@ -1,16 +1,63 @@
 ---
-title: "Contact"
+title: "Contact & Privacy Policy"
 ---
 
-Edition Esser-Skala e.U.<br/>
+## Impressum / Legal Disclosure
+
+**Edition Esser-Skala e.U.**<br/>
+Dr. Wolfgang Esser-Skala<br/>
 Wolfgangseestraße 31g<br/>
 5023 Koppl<br/>
-Austria<br/>
-[edition@esser-skala.at](mailto:edition@esser-skala.at)
+Österreich<br/>
+{{< fa phone >}} +43 677 63993452<br/>
+{{< fa envelope >}} [edition@esser-skala.at](mailto:edition@esser-skala.at)<br/>
+{{< fa globe >}} <https://edition.esser-skala.at>
+
+::: {.imprint}
+
+Unternehmensgegenstand / Business purpose
+: Musikalienverlag
+
+Firmenbuchnummer / Commercial register number
+: [669800a](https://openfirmenbuch.at/company/?fnr=669800a)
+
+Firmenbuchgericht / Jurisdiction
+: Landesgericht Salzburg
+
+Firmensitz / Place of incorporation
+: 5023 Koppl
+
+Aufsichtsbehörde / Regulating authority
+: Bezirkshauptmannschaft Salzburg Umgebung
+
+Mitgliedschaften / Memberships
+: Wirtschaftskammer Salzburg
+
+Anwendbare Rechtsvorschriften / Applicable legal provisions
+: [Gewerbeordnung](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10007517)
+
+Bankverbindung / Bank details
+: bank99<br/>
+  IBAN AT78 1912 0501 8632 3010<br/>
+  BIC SPBAATWW
+
+[![](/images/ecg.jpg){fig-align="left"}](https://www.wkoecg.at/Ecg.aspx?FirmaID=a4d460a6-84de-4b6e-98c2-69787cf1073f)
+
+:::
+
+## Datenschutzerklärung / Privacy Policy
+
+Der Schutz Ihrer Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
+
+Beim Besuch unserer Website wird Ihre IP-Adresse, Beginn und Ende der Sitzung für die Dauer dieser Sitzung erfasst. Dies ist aus technischen Gründen erforderlich und stellt damit ein berechtigtes Interesse i.S.v. Art 6 Abs 1 lit f DSGVO dar. Soweit im Folgenden nichts anderes geregelt wird, werden diese Daten von uns nicht weiterverarbeitet.
+
+Wenn Sie per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen sechs Monate bei uns gespeichert. Dies ist ein berechtigtes Interesse i.S.d. DSGVO. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+
+Wir weisen darauf hin, dass diese Webseite keine Cookies und keine Dienste von Drittanbietern verwendet.
+
+Sie erreichen uns unter folgenden Kontaktdaten: Dr. Wolfgang Esser-Skala, Wolfgangseestraße 31g, 5023 Koppl, Österreich; Tel. +43 677 63993452; E-Mail [edition@esser-skala.at](mailto:edition@esser-skala.at).
 
 
-## Disclosure (§25 Mediengesetz)
+## Colophon
 
-TBD
-
-Typeset with [Source Sans Pro](https://github.com/adobe-fonts/source-sans/) (main text) and [Fira Code](https://github.com/tonsky/FiraCode) (source code).
+Built with [Quarto](https://quarto.org/). Typeset with [Source Sans Pro](https://github.com/adobe-fonts/source-sans/) (main text) and [Fira Code](https://github.com/tonsky/FiraCode) (source code).

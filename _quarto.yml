@@ -16,7 +16,7 @@ website:
       href: news.qmd
     - text: Scores
       href: scores/eybler.qmd
-    - text: Contact
+    - text: Contact & Privacy Policy
       href: contact.qmd
   sidebar:
     - title: Home
