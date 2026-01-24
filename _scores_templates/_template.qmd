@@ -26,9 +26,7 @@ composer_data:
   archive:
     imslp:
     cpdl:
-  literature:
-    - first
-    - second
+  references:
   cv:
   intro:
   hero:

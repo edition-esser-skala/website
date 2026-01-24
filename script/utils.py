@@ -74,11 +74,19 @@ INTRO_TEMPLATE = """\
 |*links*|{links}|
 |*authorities*|{authorities}|
 |*archives*|{archives}|
-|*literature*|{literature}|
 
 : {{tbl-colwidths="[15,85]" .composer-table}}
 
 {cv}
+
+{references}
+:::
+"""
+
+REFS_TEMPLATE = """\
+#### References
+
+::: {#refs}
 :::
 """
 
@@ -424,13 +432,13 @@ def format_composer_details(data: dict) -> str:
         archives = " ".join([ARCHIVES[k].format(v)
                              for k, v in data["archive"].items()])
 
-    # literature (if available)
-    literature = "–"
-    if "literature" in data:
-        literature = data["literature"]
-
     # cv (if available)
     cv = data.get("cv", "")
+
+    # literature (if available)
+    references = ""
+    if "references" in data:
+        references = REFS_TEMPLATE
 
     return INTRO_TEMPLATE.format(
         born=born,
@@ -439,7 +447,7 @@ def format_composer_details(data: dict) -> str:
         authorities=authorities,
         archives=archives,
         cv=cv,
-        literature=literature
+        references=references
     )
 
 

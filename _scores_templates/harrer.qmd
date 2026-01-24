@@ -22,6 +22,6 @@ composer_data:
   archive:
     imslp: Harrer,_Gottlob
     cpdl: Gottlob_Harrer
-  literature: "@Kollmar2006"
+  references: "@Kollmar2006"
   cv: Harrer attended school in Görlitz. After his father's death in 1716, the family moved to Dresden in 1719. From 1722, Harrer studied medicine at the University of Leipzig, but soon turned to music. Around 1730, Harrer became a member of the Electoral Saxon and Royal Polish Chapel. Since 1733 he worked in the chapel of Imperial Count Heinrich von Brühl. From 1738 to 1741 he traveled to Italy. After his return, he was appointed bandmaster by Count Brühl. With Brühl's help, Harrer was appointed as his successor as St. Thomas Cantor in Leipzig after Johann Sebastian Bach's death in 1750.
 ---

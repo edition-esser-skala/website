@@ -182,6 +182,8 @@ def generate_score_pages(works: dict) -> None:
 
         # composer details
         composer_details = format_composer_details(page["composer_data"])
+        if "references" in page["composer_data"]:
+            page["nocite"] = page["composer_data"]["references"]
 
         # flatten work metadata to a list of dicts,
         # each of which describes a work
