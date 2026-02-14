@@ -11,3 +11,8 @@ script/pat.py
 editorial-guidelines.qmd
 technical-documentation.qmd
 TODO.md
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+**/*.quarto_ipynb
