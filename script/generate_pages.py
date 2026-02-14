@@ -6,18 +6,20 @@ import pickle
 import re
 from typing import Optional
 
-import frontmatter  # type: ignore
-from github import Github
-from github.Organization import Organization
+import frontmatter
+from github import Auth, Github
 from github.GithubException import UnknownObjectException
-import strictyaml  # type: ignore
+from github.PaginatedList import PaginatedList
+from github.Repository import Repository
+from github.Organization import Organization
+import strictyaml
 
-from utils import (Composer,
-                   format_composer_details,
-                   format_composer_name,
-                   format_work_entry,
-                   get_coll_metadata,
-                   get_tag_date)
+from helpers import (Composer,
+                     format_composer_details,
+                     format_composer_name,
+                     format_work_entry,
+                     get_coll_metadata,
+                     get_tag_date)
 
 try:
     from pat import TOKEN
@@ -61,7 +63,7 @@ def get_markdown_file(gh_org: Organization,
     )
 
     print(f"Obtaining {repo_file}")
-    doc = (gh_org  # type: ignore
+    doc = (gh_org
            .get_repo("ees-tools")
            .get_contents(repo_file)
            .decoded_content
@@ -96,7 +98,9 @@ def collect_metadata(gh_org: Organization,
 
     works: dict[Composer, list] = {}
 
-    for counter, repo in enumerate(repos):
+    repo: PaginatedList[Repository]
+    for counter, repo in enumerate(repos[1:10]):
+    # for counter, repo in enumerate(repos):
         counter_str = f"({counter + 1}/{repos.totalCount})"
 
         if repo.name in ignored_repos:
@@ -115,7 +119,7 @@ def collect_metadata(gh_org: Organization,
         print(f"{counter_str} Analyzing {repo.name}")
         try:
             metadata = strictyaml.load(
-                repo  # type: ignore
+                repo
                 .get_contents("metadata.yaml", ref=tags[0].name)
                 .decoded_content
                 .decode("utf-8")
@@ -126,7 +130,7 @@ def collect_metadata(gh_org: Organization,
 
         metadata["repo"] = repo.name
         metadata["latest_version"] = tags[0].name
-        metadata["latest_date"] = get_tag_date(tags[0])  # type: ignore
+        metadata["latest_date"] = get_tag_date(tags[0])
 
         releases = repo.get_releases()
         if releases.totalCount > 0:
@@ -134,7 +138,7 @@ def collect_metadata(gh_org: Organization,
 
         try:
             print_data = strictyaml.load(
-                repo  # type: ignore
+                repo
                 .get_contents("print/printer.yaml")
                 .decoded_content
                 .decode("utf-8")
@@ -244,7 +248,7 @@ def main() -> None:
     except FileNotFoundError:
         pass
 
-    gh = Github(TOKEN)
+    gh = Github(auth=Auth.Token(TOKEN))
     gh_org = gh.get_organization("edition-esser-skala")
 
     print(gh.get_rate_limit().resources.core)
@@ -260,6 +264,7 @@ def main() -> None:
     try:
         with open("data_generated/works_metadata.pkl", "rb") as f:
             all_works = pickle.load(f)
+        print("Using cached work data")
     except FileNotFoundError:
         all_works = collect_metadata(gh_org, ignored_repos, collection_repos)
         with open("data_generated/works_metadata.pkl", "wb") as f:
