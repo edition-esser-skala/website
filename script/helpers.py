@@ -233,7 +233,7 @@ def format_asset_list(metadata: dict) -> dict:
 
     asset_urls = {
         make_part_name(f):
-        f"https://edition.esser-skala.at/assets/{metadata['repo']}/{work}{f}"
+        f"/assets/{metadata['repo']}/{work}{f}"
         for f in asset_files
     }
 

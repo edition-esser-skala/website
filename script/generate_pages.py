@@ -99,8 +99,7 @@ def collect_metadata(gh_org: Organization,
     works: dict[Composer, list] = {}
 
     repo: PaginatedList[Repository]
-    for counter, repo in enumerate(repos[1:10]):
-    # for counter, repo in enumerate(repos):
+    for counter, repo in enumerate(repos):
         counter_str = f"({counter + 1}/{repos.totalCount})"
 
         if repo.name in ignored_repos:
@@ -242,6 +241,8 @@ def main() -> None:
         "werner-collected-works"
     ]
 
+    os.makedirs("data_generated", exist_ok=True)
+    os.makedirs("scores", exist_ok=True)
     try:
         os.remove("data_generated/assets.csv")
         os.remove("data_generated/ark_mapping_table.csv")

@@ -1,0 +1,54 @@
+name: Build and deploy site
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * 1"
+    - cron: "0 0 1 * *"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Get app token
+        id: get_app_token
+        uses: peter-murray/workflow-application-token-action@v4
+        with:
+          application_id: ${{ secrets.APPLICATION_ID }}
+          application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+
+      - name: Set up pixi
+        uses: prefix-dev/setup-pixi@v0.9.4
+        with:
+          pixi-version: v0.63.1
+
+      - name: Set up quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Generate pages
+        env:
+          GH_API_TOKEN: ${{ steps.get_app_token.outputs.token }}
+        run: |
+          pixi run python script/generate_pages.py
+
+      - name: Render with quarto
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Copy generated files
+        run: cp -r data_generated _site
+
+      - name: Deploy via rsync
+        uses: burnett01/rsync-deployments@v8
+        with:
+          switches: -avzr --delete --exclude=/assets/
+          path: _site/
+          remote_path: html/edition
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}
