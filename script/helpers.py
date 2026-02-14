@@ -7,7 +7,7 @@ import tempfile
 
 import dateutil.parser
 from git import Repo, Tag
-import strictyaml  # type: ignore
+import strictyaml
 
 LICENSES = {
     "cc-by-sa-4.0": "![](/images/license_cc-by-sa.svg){fig-alt='CC BY-SA 4.0' width=120px}",
@@ -287,12 +287,13 @@ def write_assets(asset_urls: dict, metadata: dict) -> None:
         blade = metadata["ark"].replace("68748/e1", "")
         lines = []
         for url in asset_urls.values():
+            full_url = "https://edition.esser-skala.at" + url
             part = url.split("/")[-1].replace(".pdf", "")
             if part == "full_score":
                 qualifier = ""
             else:
                 qualifier = "/" + part
-            lines.append(f"{blade}{qualifier},{url}\n")
+            lines.append(f"{blade}{qualifier},{full_url}\n")
         with open("data_generated/ark_mapping_table.csv",
                   "a", encoding="utf8") as f:
             f.writelines(lines)
