@@ -1,10 +1,15 @@
 ---
-title: ARKs
+title: ARKs and ISMNs
 ---
 
 ## Overview
 
-A semi-opaque Archival Resource Key ([ARK](https://arks.org)) is assigned to each edition as persistent identifier:
+Each edition is persistently identified by an Archival Resource Key ([ARK](https://arks.org)). In addition, printed editions are also assigned an International Standard Music Number ([ISMN](https://ismn-international.org)).
+
+
+## ARKs
+
+ARKs are designed in a semi-opaque way:
 
 - Each ARK uses the Name Assigning Authority Number ([NAAN](https://arks.org/about/ark-naans-and-systems/)) `68748` …
 - … and the [Shoulder](https://arks.org/about/ark-features/) `e1`.
@@ -23,8 +28,37 @@ A semi-opaque Archival Resource Key ([ARK](https://arks.org)) is assigned to eac
 
 ARKs are resolved by `https://ark.esser-skala.at` via a [minimal ARK resolver](https://github.com/edition-esser-skala/minimal-ark-resolver). (They are also forwarded to the resolver from this site's base URL via its `.htaccess` file.)
 
-## Examples
+### Examples
 
 - [ark:68748/e1gjwb1](https://n2t.net/ark:68748/e1gjwb1): full score of Werner's *Missa Trinitas in Unitate veneranda* WerW B.1
 - [ark:68748/e1jle40/vl1](https://n2t.net/ark:68748/e1jle40/vl1): violin 1 part of Eybler's *Omnes de Saba venient* HerEy 40
 - [ark:68748/e1fitf2/coro](https://n2t.net/ark:68748/e1fitf2/coro): vocal score of Tůma's *Stabat mater* TumW F.2
+
+
+## ISMNs
+
+According to ISO Standard 10957, the ISMN consists of 13 digits:
+
+- the prefix 979-0
+- the registrant ID (here, 700499)
+- a two-digit item ID
+- a single-digit checksum
+
+Currently, the following ISMNs have been issued;
+
+|ISMN|composer|work|
+|-|-|-|
+|[979-0-700499-00-6](https://www.amazon.de/dp/B0CKKPYBGJ)|Albrechtsberger|Missa Visitationis Beatae Mariae Virginis *SchAl A.I.20*|
+|[979-0-700499-01-3](https://www.amazon.de/dp/B0CM9JV918)|Harrer|Der Todt Abels des Gerechten *HarWV 50*|
+|[979-0-700499-02-0](https://www.amazon.de/dp/B0CXQ4J7DG)|Kobrich|Wohlgeübter Organist|
+|[979-0-700499-03-7](https://www.amazon.de/dp/B0D8HQRNT4)|Eybler|Missa Sancti Wolfgangi *HerEy 11*|
+|[979-0-700499-04-4](https://www.amazon.de/dp/B0D973PCYF)|Eybler|Sacred Music B/1|
+|[979-0-700499-05-1](https://www.amazon.de/dp/B0DDPSC8W9)|Eybler|Missa Sancti Michaelis *HerEy 2*|
+|[979-0-700499-06-8](https://www.amazon.de/dp/B0DHQYXL7J)|Eybler|Sacred Music B/2|
+|[979-0-700499-08-2](https://www.amazon.de/dp/B0DW31SH9J)|Eybler|Missa Sancti Mauritii *HerEy 4*|
+|[979-0-700499-09-9](https://www.amazon.de/dp/B0F1Y37NCT)|Eybler|Missa Sancti Benonis *HerEy 7/8*|
+|[979-0-700499-10-5](https://www.amazon.de/dp/B0F61SD1ZR)|Eybler|Missa Sancti Leopoldis *HerEy 12*|
+|[979-0-700499-11-2](https://www.amazon.de/dp/B0F89942K2)|Eybler|Missa Sancti Josephi *HerEy 17*|
+|[979-0-700499-12-9](https://www.amazon.de/dp/B0FB5LD1DD)|Eybler|Sacred Music B/3|
+|[979-0-700499-13-6](https://www.amazon.de/dp/B0FFH1CK7X)|Eybler|Missa Sanctae Theresiae *HerEy 29*|
+|[979-0-700499-14-3](https://www.amazon.de/dp/B0FMD89YX4)|Eybler|Missa Sanctae Eleonorae *HerEy 22*|
