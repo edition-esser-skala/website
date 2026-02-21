@@ -8,6 +8,8 @@ project:
 
 website:
   title: "Edition Esser-Skala"
+  search:
+    location: sidebar
   navbar:
     left:
     - text: Home
@@ -20,7 +22,6 @@ website:
       href: contact.qmd
   sidebar:
     - title: Home
-      search: true
       contents:
       - text: Home
         href: index.qmd
