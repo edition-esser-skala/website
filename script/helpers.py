@@ -4,6 +4,7 @@ import os
 from collections import namedtuple
 import re
 import tempfile
+from typing import Optional
 
 import dateutil.parser
 from git import Repo, Tag
@@ -243,8 +244,10 @@ def format_asset_list(metadata: dict) -> dict:
             "{{< fa music >}}",
             asset_urls[ASSET_MIDI]
         )
+        midi_url = asset_urls[ASSET_MIDI]
         del asset_urls[ASSET_MIDI]
     except KeyError:
+        midi_url = None
         midi_link = None
 
     # sort asset list and move full score to the front
@@ -255,7 +258,7 @@ def format_asset_list(metadata: dict) -> dict:
     except ValueError:
         pass
 
-    write_assets(asset_urls, metadata)
+    write_assets(asset_urls, midi_url, metadata)
     metadata["asset_links"] = " ".join(
         [asset_link.format(n, asset_urls[n]) for n in asset_names]
     )
@@ -263,13 +266,16 @@ def format_asset_list(metadata: dict) -> dict:
     return metadata
 
 
-def write_assets(asset_urls: dict, metadata: dict) -> None:
+def write_assets(asset_urls: dict,
+                 midi_url: Optional[str],
+                 metadata: dict) -> None:
     """
     Write assets URLs on the server and their corresponding
     GitHub release URL to a CSV file.
 
     Args:
         asset_urls: asset URLs on the server
+        midi_url: optional MIDI URL on the server; None if unavailable
         metadata: work metadata
     """
 
@@ -279,10 +285,15 @@ def write_assets(asset_urls: dict, metadata: dict) -> None:
               metadata["latest_version"] +
               "/")
 
+    asset_url_values = list(asset_urls.values())
+    if midi_url:
+        asset_url_values.append(midi_url)
+
     with open("data_generated/assets.csv",
               "a", encoding="utf8") as f:
         f.writelines([f"{url},{url_gh}{os.path.basename(url)}\n"
-                      for url in asset_urls.values()])
+                      for url in asset_url_values])
+
     if "ark" in metadata:
         blade = metadata["ark"].replace("68748/e1", "")
         lines = []
