@@ -18,6 +18,7 @@ ARKs are designed in a semi-opaque way:
   |Composer|Acronym|Work ID|
   |-|-|-|
   |Eybler|jle|HerEy number|
+  |Gugl|mgu|sequential number|
   |Haydn|jmh|MH number|
   |Reutter der Jüngere|grj|HofR number|
   |Tůma|fit|TumW number|
