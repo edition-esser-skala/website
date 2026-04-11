@@ -52,6 +52,7 @@ website:
         - section: D
           contents:
             - scores/danzi.qmd
+            - scores/donberger.qmd
         - section: E
           contents:
             - scores/eberlin.qmd
