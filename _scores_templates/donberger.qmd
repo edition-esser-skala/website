@@ -1,0 +1,24 @@
+---
+composer_data:
+  name:
+    last: Donberger
+    first: Georg Joseph
+  born:
+    date: 1707-03-03
+    location: Bruck an der Leitha, Lower Austria
+  died:
+    date: 1768-04-02
+    location: Herzogenburg, Lower Austria
+  encyclopedia:
+    mgg: 605359
+    grove: 10.1093/gmo/9781561592630.article.07995
+    wikipedia_de: Georg_Donberger
+    oeml: 10.1553/0x0001cbe8
+    db: pnd100111599
+  authority:
+    gnd: 100111599
+    viaf: 19945670
+    isni: 0000000073683608
+  references: "@Hug2007"
+  cv: Donberger attended the Jesuit seminary in Vienna from 1720 and was a student of Antonio Caldara. From 1728 he lived in the Herzogenburg monastery (professed in 1730, ordained priest and choirmaster in 1733). He was among the most prolific church composers of his time.
+---
