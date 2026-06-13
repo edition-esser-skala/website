@@ -99,7 +99,7 @@ def collect_metadata(gh_org: Organization,
     )
     codeberg_repos = [r.name for r in codeberg_client
                                       .organization
-                                      .org_list_repos("edition-esser-skala")]
+                                      .org_list_repos("edition-esser-skala", limit=200)]
 
     repos = gh_org.get_repos(sort="updated")
     if ignored_repos is None:
