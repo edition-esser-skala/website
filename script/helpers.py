@@ -386,10 +386,15 @@ def format_work_entry(work: dict, page_composer: Composer) -> tuple[str, str]:
         )
 
     ## source code
+    if work['has_codeberg_repo']:
+        codeberg_link = f"[Codeberg ({work['latest_version']}, {work['latest_date']})](https://codeberg.org/edition-esser-skala/{work['repo']})"
+    else:
+        codeberg_link = ""
+
     res.append(
         row.format(
             "source",
-            f"[GitHub ({work['latest_version']}, {work['latest_date']})](https://github.com/edition-esser-skala/{work['repo']})"
+            f"{codeberg_link}[GitHub ({work['latest_version']}, {work['latest_date']})](https://github.com/edition-esser-skala/{work['repo']})"
         )
     )
 
@@ -517,6 +522,7 @@ def get_coll_metadata(metadata: dict) -> list:
                 work = strictyaml.load(f.read()).data
 
             work["repo"] = metadata["repo"]
+            work["has_codeberg_repo"] = metadata["has_codeberg_repo"]
             work["latest_version"] = metadata["latest_version"]
             work["latest_date"] = metadata["latest_date"]
             work["work_dir"] = work_dir

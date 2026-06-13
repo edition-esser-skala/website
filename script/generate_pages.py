@@ -12,6 +12,7 @@ from github.GithubException import UnknownObjectException
 from github.PaginatedList import PaginatedList
 from github.Repository import Repository
 from github.Organization import Organization
+from pyforgejo import PyforgejoApi
 import strictyaml
 
 from helpers import (Composer,
@@ -22,9 +23,10 @@ from helpers import (Composer,
                      get_tag_date)
 
 try:
-    from pat import TOKEN
+    from pat import TOKEN, CODEBERG_TOKEN
 except ModuleNotFoundError:
     TOKEN = os.environ["GH_API_TOKEN"]
+    CODEBERG_TOKEN = os.environ["CB_API_TOKEN"]
 
 
 PAGE_TEMPLATE = """\
@@ -90,6 +92,15 @@ def collect_metadata(gh_org: Organization,
         work metadata
     """
 
+    print("Obtaining list of repos on Codeberg")
+    codeberg_client = PyforgejoApi(
+        base_url="https://codeberg.org/api/v1",
+        api_key=CODEBERG_TOKEN
+    )
+    codeberg_repos = [r.name for r in codeberg_client
+                                      .organization
+                                      .org_list_repos("edition-esser-skala")]
+
     repos = gh_org.get_repos(sort="updated")
     if ignored_repos is None:
         ignored_repos = []
@@ -145,6 +156,8 @@ def collect_metadata(gh_org: Organization,
             metadata["asin"] = print_data["asin"]
         except UnknownObjectException:
             pass
+
+        metadata["has_codeberg_repo"] = repo.name in codeberg_repos
 
         if repo.name in collection_repos:
             metadata["collection"] = get_coll_metadata(metadata)

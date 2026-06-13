@@ -16,3 +16,6 @@ pygments = ">=2.19.2,<3"
 python-dateutil = ">=2.9.0.post0,<3"
 strictyaml = ">=1.7.3,<2"
 python-frontmatter = ">=1.1.0,<2"
+
+[pypi-dependencies]
+pyforgejo = ">=2.0.5, <3"
