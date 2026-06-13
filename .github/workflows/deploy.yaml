@@ -24,9 +24,9 @@ jobs:
           application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
 
       - name: Set up pixi
-        uses: prefix-dev/setup-pixi@v0.9.4
+        uses: prefix-dev/setup-pixi@v0.9.6
         with:
-          pixi-version: v0.63.1
+          pixi-version: v0.68.0
 
       - name: Set up quarto
         uses: quarto-dev/quarto-actions/setup@v2
