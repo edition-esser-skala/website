@@ -17,6 +17,7 @@ ARKs are designed in a semi-opaque way:
 
   |Composer|Acronym|Work ID|
   |-|-|-|
+  |Albrechtsberger|jga|SchAl number|
   |Donberger|gjd|HugD number|
   |Eybler|jle|HerEy number|
   |Gugl|mgu|sequential number|
@@ -57,6 +58,7 @@ Currently, the following ISMNs have been issued;
 |[979-0-700499-04-4](https://www.amazon.de/dp/B0D973PCYF)|Eybler|Sacred Music B/1|
 |[979-0-700499-05-1](https://www.amazon.de/dp/B0DDPSC8W9)|Eybler|Missa Sancti Michaelis *HerEy 2*|
 |[979-0-700499-06-8](https://www.amazon.de/dp/B0DHQYXL7J)|Eybler|Sacred Music B/2|
+|[979-0-700499-07-5](https://www.amazon.de/dp/B0HBKKVQKZ)|Eybler|Missa Sancti Maximiliani *HerEy 18*|
 |[979-0-700499-08-2](https://www.amazon.de/dp/B0DW31SH9J)|Eybler|Missa Sancti Mauritii *HerEy 4*|
 |[979-0-700499-09-9](https://www.amazon.de/dp/B0F1Y37NCT)|Eybler|Missa Sancti Benonis *HerEy 7/8*|
 |[979-0-700499-10-5](https://www.amazon.de/dp/B0F61SD1ZR)|Eybler|Missa Sancti Leopoldis *HerEy 12*|
