@@ -1,5 +1,5 @@
 ---
-title: Quarterly update Q3/2026
+title: Quarterly update Q2/2026
 date: 2026-06-30
 categories: [editions, performances, technical]
 description: Donberger · Eybler · Gugl · Haydn M · Tůma · Werner · Performances · Codeberg
@@ -90,7 +90,7 @@ description: Donberger · Eybler · Gugl · Haydn M · Tůma · Werner · Perfor
 
 [Kornraset Narkmun](https://kornrasetnarkmun.com/) has performed several works of Tůma and Werner at the Pfarrkirche Graz-Mariahilf on 2026-04-13: The *Kyrie* from TumW A.9, the *Gloria* to *Agnus Dei* from TumW A.12, *O sacrum convivum* and *O quam suavis est* from WerW D.2.12, as well as *Ave Regina coelorum* WerW I.2.9.
 
-Constantine Novotny and the St. Patrick Lorica Choir and Mozart Orchestra have performed Michael Haydn's *Applicatio* MH 323 at the Second Annual St. Patrick Mozart Festival in White Lake, MI 48386, on 2026-06-07.
+Constantine Novotny and the St. Patrick Lorica Choir and Mozart Orchestra have performed Michael Haydn's *Applicatio* MH 323 at the Second Annual St. Patrick Mozart Festival in White Lake, MI 48386, on 2026-06-07. Recordings of the [Canticum in Tono peregrino](https://youtu.be/xxp88Ur9rmk?si=IR9HHa75pcGQW1wp), the [Chorus tonum quintum imitans](https://youtu.be/MPa5hnlU6_g?si=vQNj0Q7Epyh9R8EW), and the [Chorus Populi](https://www.youtube.com/watch?v=rt7Zevk5cUo&list=PLR7eDbGktdEA&index=3) are available.
 
 
 ### Technical
