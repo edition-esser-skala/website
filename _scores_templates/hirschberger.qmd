@@ -1,0 +1,22 @@
+---
+composer_data:
+  name:
+    last: Hirschberger
+    first: P. Albericus
+  born:
+    date: 1709-03-11
+    location: Ried im Innkreis, Austria
+  died:
+    date: 1745-09-27
+    location: Schupfing bei Halsbach, Germany
+  encyclopedia:
+    oeml: 10.1553/0x00027646
+    db: pnd102499365
+  authority:
+    gnd: 102499365
+    viaf: 59478214
+    isni: 0000000003844306
+  archive:
+    cpdl: Albericus_Hirschberger
+  cv: Hirschberger entered the Cistercian abbey of Raitenhaslach in Upper Bavaria in 1727 (professed in 1728, ordained a priest in 1734). His studies took him to the Benedictine monasteries of Rott am Inn and Prüfening in 1731. Afterwards, he worked, among other things, as music director in Raitenhaslach.
+---
