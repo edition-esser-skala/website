@@ -20,7 +20,7 @@ ARKs are designed in a semi-opaque way:
   |Albrechtsberger|jga|SchAl number|
   |Donberger|gjd|HugD number|
   |Eybler|jle|HerEy number|
-  |Gugl|mgu|sequential number|
+  |Gugl|mgu|GuglW number|
   |Haydn|jmh|MH number|
   |Reutter der Jüngere|grj|HofR number|
   |Tůma|fit|TumW number|

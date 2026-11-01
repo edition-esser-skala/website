@@ -22,7 +22,7 @@ description: Donberger · Eybler · Gugl · Haydn M · Tůma · Werner · Perfor
 
 ### Gugl, Matthäus
 
-- [Quæ est ista](/scores/gugl.html#work-a-la-920)
+- [Quæ est ista](/scores/gugl.html#work-guglw-4) GuglW 4
 
 
 ### Haydn, Johann Michael
@@ -49,7 +49,7 @@ description: Donberger · Eybler · Gugl · Haydn M · Tůma · Werner · Perfor
 
 ### Werner, Gregor Joseph
 
-- Oratorius
+- Oratorios
   - [Debora](/scores/werner.qmd#work-werw-a-19) WerW A.19
 - Masses
   - [Missa](/scores/werner.qmd#work-werw-b-2) WerW B.2

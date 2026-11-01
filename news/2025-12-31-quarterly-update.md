@@ -16,7 +16,7 @@ description: Eybler · Gugl · Tůma · Werner · Zacher · Performances · Talk
 
 ### Gugl, Matthäus
 
-- [Missa Sanctissimæ Trinitatis](/scores/gugl.html#work-a-kr-c-12-691)
+- [Missa Sanctissimæ Trinitatis](/scores/gugl.html#work-guglw-3) GuglW 3
 
 
 

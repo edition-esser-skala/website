@@ -50,7 +50,7 @@ description: Eybler · Haydn M · Reutter · Tůma · Werner
 
 ### Werner, Gregor Joseph
 
-- Oratorius
+- Oratorios
   - [Die Auferstehung](/scores/werner.qmd#work-werw-a-9) WerW A.9
 - Masses
   - [Missa Tota spes mea inter optimum Deum](/scores/werner.qmd#work-werw-b-30) WerW B.30
