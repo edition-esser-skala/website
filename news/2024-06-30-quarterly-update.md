@@ -1,8 +1,9 @@
 ---
 title: Quarterly update Q2/2024
 date: 2024-06-30
-categories: editions
-description: New focus areas · Eybler · Haydn M · Tůma · Werner
+categories: [editions, performances]
+description: Eybler · Haydn M · Tůma · Werner
+description: New focus areas · Eybler · Haydn M · Tůma · Werner · Performances
 ---
 
 ## New main focus areas
@@ -88,3 +89,8 @@ Notably, we do not list projects separately on the edition's website anymore, si
   - [Dies iræ](/scores/werner.qmd#work-werw-z-15) WerW Z.15
   - [Date rosas, date flores](/scores/werner.qmd#work-werw-z-16) WerW Z.16
   - [Wann der Himmel laſſet fallen](/scores/werner.qmd#work-werw-z-17) WerW Z.17
+
+
+## Performances
+
+Martin Zeller and the [Cantores Caroli & Ensemble 1756](https://www.karlskirche.at/kirchenmusik/) have performed Leopold Hofmann's [Missa festiva](/scores/hofmann.html#work-proh-26) ProH 26 at the Karlskirche in Vienna on 2046-04-01.
