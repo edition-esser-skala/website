@@ -23,6 +23,7 @@ ARKs are designed in a semi-opaque way:
   |Gugl|mgu|GuglW number|
   |Haydn|jmh|MH number|
   |Reutter der Jüngere|grj|HofR number|
+  |Scheibl|jas|running number|
   |Tůma|fit|TumW number|
   |Werner|gjw|WerW number|
   |Zelenka|jdz|ZWV number|
